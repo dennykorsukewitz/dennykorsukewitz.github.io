@@ -5,15 +5,15 @@ platforms:
   -
     type: Twitter
     icon: "fab fa-twitter"
-    link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
+    link: "https://twitter.com/intent/tweet?text=DennyKorsukéwitz&url=https://dennykorsukewitz.github.io/"
   -
     type: Facebook
     icon: "fab fa-facebook-square"
-    link: "https://www.facebook.com/sharer/sharer.php?title=TITLE&u=URL"
+    link: "https://www.facebook.com/sharer/sharer.php?title=DennyKorsukéwitz&u=https://dennykorsukewitz.github.io/"
   -
     type: Telegram
     icon: "fab fa-telegram"
-    link: "https://t.me/share/url?url=URL&text=TITLE"
+    link: "https://t.me/share/url?url=https://dennykorsukewitz.github.io/&text=DennyKorsukéwitz"
 
   # Uncomment below if you need to.
   # -

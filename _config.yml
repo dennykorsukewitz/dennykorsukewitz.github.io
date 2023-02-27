@@ -3,6 +3,10 @@
 # Import the theme
 theme: jekyll-theme-chirpy
 
+# Additional plugins
+plugins:
+  - jekyll-optional-front-matter
+
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
 baseurl: ''
@@ -12,7 +16,6 @@ baseurl: ''
 # otherwise, the layout language will use the default value of 'en'.
 lang: en
 
-
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Europe/Berlin
 
@@ -20,9 +23,7 @@ timezone: Europe/Berlin
 # ↓ --------------------------
 
 title: Denny Korsukéwitz
-
-tagline: Denny Korsukéwitz 4 OpenSource
-
+tagline: DK 4 OpenSource
 description: >-                        # used by seo meta and the atom feed
   Here you can find my open source projects.
 
@@ -36,7 +37,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Denny Korsukéwitz
-  email: dennykorsukewitz@domain.com             # change to your email address
+  email: dennykorsukewitz@gmail.com             # change to your email address
   links:
     - https://github.com/dennykorsukewitz       # change to your github homepage
 
@@ -63,7 +64,8 @@ social:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark   # [light|dark]
+# theme_mode: [dark|light]
+theme_mode: dark
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -73,7 +75,7 @@ theme_mode: dark   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/img/avatar.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -131,6 +133,10 @@ collections:
 
 defaults:
   - scope:
+      path: ''
+    values:
+      layout: page
+  - scope:
       path: ''          # An empty string here means all files in the project
       type: posts
     values:
@@ -171,12 +177,18 @@ compress_html:
   ignore:
     envs: [development]
 
+include:
+  - CONTRIBUTING.md
+  - README.md
+  - config.md
+  - feature.md
+  - index.md
+  - CHANGELOG.md
+
 exclude:
   - '*.gem'
   - '*.gemspec'
   - tools
-  - README.md
-  - CHANGELOG.md
   - LICENSE
   - gulpfile.js
   - node_modules
@@ -190,3 +202,4 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+    posts: /posts/:name/

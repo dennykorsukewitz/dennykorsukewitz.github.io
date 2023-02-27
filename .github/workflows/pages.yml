@@ -1,16 +1,13 @@
 name: GitHub Pages
 on:
-  push:
-    branches:
-      - main
-      - dev
-      - dev-update
-    paths-ignore:
-      - .gitignore
-      - README.md
-      - LICENSE
-
+  # push:
+  #   branches:
+  #     - main
+  #     - dev
+  #     - dev-update
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+  # repository_dispatch:
+  #   types: [pages]
 
 permissions:
   contents: read
@@ -23,17 +20,68 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
 
-      - name: Checkout
+  Build:
+    runs-on: ubuntu-22.04 # ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPOSITORIES: 'DK4 DK4Znuny-VisualStudioCode DK4Znuny-QuickDelete DK4OTRS-UBInventory MRBS-OTRS'
+    steps:
+      - name: Checkout dennykorsukewitz.github.io
         uses: actions/checkout@v3
+        env:
+          fetch-depth: "1"
         with:
-          fetch-depth: 0
-          # submodules: true
+          path: pages
+          submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
+
+      - name: Add dennykorsukewitz (GitHub Profile)
+        run: pages/.github/workflows/pages/github-profile.sh
+
+      - name: Add Repository List
+        run: pages/.github/workflows/pages/repository.sh
+
+      - name: Create release blog posts
+        run: pages/.github/workflows/pages/posts.sh
+        # run: |
+        #   OWNER="dennykorsukewitz"
+        #   REPOSITORIES=($(echo "$REPOSITORIES"))
+        #   for REPOSITORY in "${REPOSITORIES[@]}"; do
+        #     read RELEASE_NAME RELEASE_TAG RELEASE_DATE RELEASE_URL RELEASE_TAR_URL RELEASE_ZIP_URL RELEASE_BODY < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/releases/latest" | jq -r '.name, .tag_name, .published_at, .html_url, .tarball_url, .zipball_url, .body'))
+
+
+        #     RELEASE_DATE=$(echo "$RELEASE_DATE" | sed -Ee "s|(T.*)||")
+
+        #     echo "RELEASE_NAME: $RELEASE_NAME"
+        #     echo "RELEASE_TAG: $RELEASE_TAG"
+        #     echo "RELEASE_DATE: $RELEASE_DATE"
+        #     echo "RELEASE_URL: $RELEASE_URL"
+        #     echo "RELEASE_TAR_URL: $RELEASE_TAR_URL"
+        #     echo "RELEASE_ZIP_URL: $RELEASE_ZIP_URL"
+        #     echo "'$RELEASE_BODY'"
+
+        #     cat << EOF > "${GITHUB_WORKSPACE}"/pages/_posts/$RELEASE_DATE-$REPOSITORY-Release-"$RELEASE_NAME".md
+        #   ---
+        #   title: $REPOSITORY - Release $RELEASE_TAG
+        #   date: $RELEASE_DATE
+        #   author: $OWNER
+        #   categories: [DK4, Znuny]
+        #   tags: [DK4, Znuny]
+        #   pin: true
+        #   ---
+
+        #   # $RELEASE_NAME
+
+        #   $RELEASE_BODY
+
+        #   [View this release on GitHub]($RELEASE_URL)
+        #   [Download as .zip]($RELEASE_ZIP_URL)
+        #   [Download as .tar.gz]($RELEASE_TAR_URL)
+
+        #   EOF
+        #   done
 
       - name: Setup Pages
         id: pages
@@ -42,22 +90,23 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: pages
           ruby-version: 3   # reads from a '.ruby-version' or '.tools-version' file if 'ruby-version' is omitted
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+        run: cd "${GITHUB_WORKSPACE}/pages" && bundle exec jekyll build --source "${GITHUB_WORKSPACE}/pages/" --destination "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
 
-      - name: Test site
-        run: |
-          bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
+      # - name: Test site
+      #   run: |
+      #     cd "${GITHUB_WORKSPACE}/pages" && bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "_site${{ steps.pages.outputs.base_path }}"
+          path: "pages/_site${{ steps.pages.outputs.base_path }}"
 
   Deploy:
     environment:

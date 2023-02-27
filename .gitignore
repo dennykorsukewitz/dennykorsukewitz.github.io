@@ -10,6 +10,7 @@
 
 # bundler cache
 _site
+_posts
 vendor
 Gemfile.lock
 
@@ -19,3 +20,16 @@ Gemfile.lock
 # npm dependencies
 node_modules
 package-lock.json
+
+# _posts_static
+_posts_static/2023-02-15-TEST.md
+
+# DK4
+index.md
+dennykorsukewitz
+
+DK4
+DK4OTRS-UBInventory/
+DK4Znuny-QuickDelete
+DK4Znuny-VisualStudioCode
+MRBS-OTRS/
