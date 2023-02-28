@@ -55,3 +55,5 @@ $RELEASE_BODY
 EOF
 done
 
+echo -e "\n-----------List all posts-----------\n"
+ls -l "$PAGES"/_posts/
