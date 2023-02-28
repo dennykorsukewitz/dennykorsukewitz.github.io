@@ -1,7 +1,8 @@
 #!/bin/bash
 
 OWNER="dennykorsukewitz"
-REPOSITORIES='DK4 DK4Znuny-VisualStudioCode DK4Znuny-QuickDelete DK4OTRS-UBInventory MRBS-OTRS'
+# REPOSITORIES='DK4 DK4Znuny-VisualStudioCode DK4Znuny-QuickDelete DK4OTRS-UBInventory MRBS-OTRS'
+REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name))
 REPOSITORIES=($(echo "$REPOSITORIES"))
 
 PAGES='pages'
