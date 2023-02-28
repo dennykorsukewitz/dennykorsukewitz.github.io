@@ -28,14 +28,15 @@ use gh cli
     - [x] DK4OTRS-UBInventory
     - [x] MRBS-OTRS
     - [x] DK4Znuny-Guide
+- [x] trigger remote github pages from each repository
+    - [x] DK4Znuny-VisualStudioCode
+    - [x] DK4Znuny-QuickDelete
+    - [x] DK4OTRS-UBInventory
+    - [x] MRBS-OTRS
+    - [x] DK4Znuny-Guide
+- [x] generate `_data/repositories.yml` via topic 'pages' loop
+- [ ] Breadcrumbs via Title
 - [ ] about.md
-- [ ] trigger remote github pages from each repository
-    - [ ] DK4Znuny-VisualStudioCode
-    - [ ] DK4Znuny-QuickDelete
-    - [ ] DK4OTRS-UBInventory
-    - [ ] MRBS-OTRS
-    - [ ] DK4Znuny-Guide
-- [ ] generate `_data/repositories.yml` via topic 'pages' loop
 
 
 > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.

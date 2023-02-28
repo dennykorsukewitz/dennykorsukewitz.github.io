@@ -9,3 +9,4 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 done
 
 rm -f _posts/*
+rm -f _data/repositories.yml

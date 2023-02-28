@@ -21,15 +21,15 @@ layout: default
     {% if page.layout == 'page' or page.collection == 'tabs' %}
       {% assign tab_key = page.title | downcase %}
       {% assign title = site.data.locales[site.lang].tabs[tab_key] | default: page.title %}
-      <!-- Denny -->
+      <!-- dennykorsukewitz.github.io -->
       {% unless page.repository  %}
-      <!-- Denny -->
+      <!-- dennykorsukewitz.github.io -->
       <h1 class="dynamic-title">
         {{ title }}
       </h1>
-      <!-- Denny -->
+      <!-- dennykorsukewitz.github.io -->
       {% endunless %}
-      <!-- Denny -->
+      <!-- dennykorsukewitz.github.io -->
       <div class="post-content">
         {{ _content }}
       </div>
@@ -44,9 +44,9 @@ layout: default
   <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
 
     <div class="access">
-      <!-- Denny -->
+      <!-- dennykorsukewitz.github.io -->
       {% include repositories.html %}
-      <!-- Denny -->
+      <!-- dennykorsukewitz.github.io -->
       {% include update-list.html %}
       {% include trending-tags.html %}
     </div>

@@ -36,7 +36,7 @@ jobs:
         run: pages/.github/workflows/pages/github-profile.sh
 
       - name: Add Repository List
-        run: pages/.github/workflows/pages/repository.sh
+        run: pages/.github/workflows/pages/repositories.sh
 
       - name: Create release blog posts
         run: pages/.github/workflows/pages/posts.sh
