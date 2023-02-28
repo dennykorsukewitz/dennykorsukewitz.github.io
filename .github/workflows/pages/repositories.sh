@@ -33,6 +33,7 @@ title: $REPOSITORY
 category: $REPOSITORY
 repository: $REPOSITORY
 tags: $TOPICS
+toc: true
 ---
 
     "

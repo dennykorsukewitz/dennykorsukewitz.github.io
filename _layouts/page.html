@@ -49,12 +49,15 @@ layout: default
       <!-- dennykorsukewitz.github.io -->
       {% include update-list.html %}
       {% include trending-tags.html %}
+      {% include toc.html %}
     </div>
 
     {% for _include in layout.panel_includes %}
       {% assign _include_path = _include | append: '.html' %}
+      {{ _include_path }}
       {% include {{ _include_path }} %}
     {% endfor %}
+
   </div>
 
 </div>

@@ -38,6 +38,7 @@ date: $RELEASE_DATE
 author: $OWNER
 categories: [DK4]
 tags: $TOPICS
+toc: true
 pin: true
 ---
 

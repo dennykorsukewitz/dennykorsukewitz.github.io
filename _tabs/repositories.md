@@ -1,9 +1,6 @@
 ---
 layout: page
 popup: false
-refactor: false
-panel_includes:
-  - toc
 icon: fa fa-cubes
 order: 1
 ---

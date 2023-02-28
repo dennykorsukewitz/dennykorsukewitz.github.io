@@ -36,6 +36,7 @@ use gh cli
     - [x] DK4Znuny-Guide
 - [x] generate `_data/repositories.yml` via topic 'pages' loop
 - [x] Breadcrumbs via Title
+- [ ] toc on every page
 - [ ] about.md
 
 
