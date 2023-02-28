@@ -26,7 +26,11 @@
         {% elsif forloop.index == 2 %}
           <span>
             <a href="{{ item | relative_url }}">
-              {{ item | capitalize }}
+              {% if site.data.repositories contains item %}
+                {{ item }}
+              {% else %}
+                {{ item | capitalize }}
+              {% endif %}
             </a>
           </span>
         <!-- dennykorsukewitz.github.io -->

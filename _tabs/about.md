@@ -35,7 +35,7 @@ use gh cli
     - [x] MRBS-OTRS
     - [x] DK4Znuny-Guide
 - [x] generate `_data/repositories.yml` via topic 'pages' loop
-- [ ] Breadcrumbs via Title
+- [x] Breadcrumbs via Title
 - [ ] about.md
 
 
