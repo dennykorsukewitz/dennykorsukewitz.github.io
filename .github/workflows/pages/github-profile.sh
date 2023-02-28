@@ -14,6 +14,7 @@ TEMPLATE="---
 layout: page
 # Index page
 category: $REPOSITORY
+toc: true
 ---
 
 "
