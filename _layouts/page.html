@@ -53,6 +53,11 @@ layout: default
     </div>
 
     {% for _include in layout.panel_includes %}
+      <!-- dennykorsukewitz.github.io -->
+      {%- if _include == 'toc' -%}
+        {% continue %}
+      {%- endif -%}
+      <!-- dennykorsukewitz.github.io -->
       {% assign _include_path = _include | append: '.html' %}
       {{ _include_path }}
       {% include {{ _include_path }} %}

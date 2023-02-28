@@ -14,8 +14,8 @@ use gh cli
         - [ ] for a list of project
             - [ ] release use loop instead latest release to get all releases
             - [x] README + MarkdownFiles
-                - [ ] Add topics as tag to README
-                - [ ] panel_includes: - toc
+            - [x] Add topics as tag to release post
+
 - [x] change README.mds github issues open   closed  MR open/closed
     - [x] DK4Znuny-VisualStudioCode
     - [x] DK4Znuny-QuickDelete
@@ -36,7 +36,7 @@ use gh cli
     - [x] DK4Znuny-Guide
 - [x] generate `_data/repositories.yml` via topic 'pages' loop
 - [x] Breadcrumbs via Title
-- [ ] toc on every page
+- [x] toc on every page
 - [ ] about.md
 
 

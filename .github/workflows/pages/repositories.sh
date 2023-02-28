@@ -30,7 +30,6 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
     TEMPLATE="---
 layout: page
 title: $REPOSITORY
-category: $REPOSITORY
 repository: $REPOSITORY
 tags: $TOPICS
 toc: true

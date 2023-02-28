@@ -36,7 +36,7 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 title: $REPOSITORY - Release $RELEASE_TAG
 date: $RELEASE_DATE
 author: $OWNER
-categories: [DK4]
+categories: [DK4, $REPOSITORY]
 tags: $TOPICS
 toc: true
 pin: true
