@@ -1,52 +1,27 @@
 #!/bin/bash
 
 OWNER="dennykorsukewitz"
-REPOSITORY="DK4Znuny-VisualStudioCode"
-RELEASES=$(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/releases" | jq -r '.[] | @base64'  )
+REPOSITORY="MRBS-OTRS"
+RELEASES=($(gh release list --repo "$OWNER"/"$REPOSITORY" | awk '{print $1}'))
+for RELEASE in "${RELEASES[@]}"; do
 
-jsonData='[{"name": "name#1","value": "value#1"},{"name": "name#2","value": "value#2"}]'
-RELEASES=($(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/releases" ))
+  echo -e "\n-----------$REPOSITORY - $RELEASE-----------\n"
 
-jsonData='[{"name": "name#1","value": "value#1"},{"name": "name#2","value": "value#2"}]'
-for row in $(echo "${RELEASES}" | jq -r '.[] | @base64'); do
-    _jq() {
-     echo "${row}" | base64 --decode | jq -r "${1}"
-    }
+  read RELEASE_NAME RELEASE_TAG RELEASE_DATE RELEASE_URL RELEASE_TAR_URL RELEASE_ZIP_URL RELEASE_BODY < <(echo $(gh release view $RELEASE --repo $OWNER/$REPOSITORY --json name --json tagName --json publishedAt --json url --json tarballUrl --json zipballUrl --json body | jq -r '.name, .tagName, .publishedAt, .url, .tarballUrl, .zipballUrl, .body'))
+  RELEASE_DATE=$(echo "$RELEASE_DATE" | sed -Ee "s|(T.*)||")
 
-    # OPTIONAL
-    # Set each property of the row to a variable
-    name=$(_jq '.name')
-    value=$(_jq '.value')
+  echo "RELEASE_NAME: $RELEASE_NAME"
+  echo "RELEASE_TAG: $RELEASE_TAG"
+  echo "RELEASE_DATE: $RELEASE_DATE"
+  echo "RELEASE_URL: $RELEASE_URL"
+  echo "RELEASE_TAR_URL: $RELEASE_TAR_URL"
+  echo "RELEASE_ZIP_URL: $RELEASE_ZIP_URL"
 
-    # Utilize your variables
-    echo "$name = $value"
-done
+  echo ""
+  printf "${RELEASE_BODY}"
+  echo ""
 
-# json=$(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/releases")
-
-
-# arr=( $( echo "$json" | jq '.[]' ) )
-# printf '%s\n' "${arr[@]}"
-
-# # iterate through the Bash array
-for item in "${RELEASES[@]}"; do
-  echo -e "\n-----------1-----------\n"
-  echo "$item | {full_name: .full_name, url: .url}'"
-  echo -e "\n-----------2-----------\n"
 done
 
 
-
-# items=$(echo "$RELEASES" | jq -c -r '.[]')
-# for item in ${items[@]}; do
-#     echo $item
-#     # whatever you are trying to do ...
-# done
-
-# # iterate through the Bash array
-# for item in "${RELEASES[@]}"; do
-#   echo '1 -----------'
-#   echo "$item"
-#   echo '2 -----------'
-# done
 
