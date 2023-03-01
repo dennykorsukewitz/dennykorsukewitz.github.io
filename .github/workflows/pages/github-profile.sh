@@ -19,4 +19,5 @@ toc: true
 
 "
 
+# echo "$TEMPLATE" | cat - "$REPOSITORY"/README.md > temp && mv temp "$PAGES"/_tabs/about.md
 echo "$TEMPLATE" | cat - "$REPOSITORY"/README.md > temp && mv temp "$PAGES"/index.md

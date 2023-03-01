@@ -10,7 +10,7 @@ if [ -z "$GITHUB_WORKSPACE" ];then
 fi
 
 # copy static posts
-cp "$PAGES"/_posts_static/* "$PAGES"/_posts/
+cp "$PAGES"/_static/_posts/* "$PAGES"/_posts/
 
 for REPOSITORY in "${REPOSITORIES[@]}"; do
 
@@ -26,8 +26,12 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
     RELEASE_DATE=$(echo "$RELEASE_DATE" | sed -Ee "s|(T.*)||")
 
     PIN='false'
+    LAST_MODIFIED_AT=''
     if [ "${RELEASES[0]}" == "$RELEASE" ]; then
       PIN='true'
+
+      # optional
+      LAST_MODIFIED_AT="last_modified_at: $RELEASE_DATE"
     fi
 
     echo "RELEASE_NAME: $RELEASE_NAME"
