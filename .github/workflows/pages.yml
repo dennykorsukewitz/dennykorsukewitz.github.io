@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-22.04 # ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-      REPOSITORIES: 'DK4 DK4Znuny-VisualStudioCode DK4Znuny-QuickDelete DK4OTRS-UBInventory MRBS-OTRS'
+      REPOSITORIES: 'DK4 VSCode-Znuny VSCode-AddFolderToWorkspace DK4Znuny-QuickDelete DK4OTRS-UBInventory MRBS-OTRS'
     steps:
       - name: Checkout dennykorsukewitz.github.io
         uses: actions/checkout@v3

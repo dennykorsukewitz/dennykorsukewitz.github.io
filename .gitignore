@@ -7,6 +7,7 @@
 !.commitlintrc.json
 !.versionrc.json
 !.stylelintrc.json
+TODO.md
 
 # bundler cache
 _site
@@ -31,5 +32,6 @@ dennykorsukewitz
 DK4
 DK4OTRS-UBInventory/
 DK4Znuny-QuickDelete
-DK4Znuny-VisualStudioCode
+VSCode-Znuny
+VSCode-AddFolderToWorkspace
 MRBS-OTRS/
