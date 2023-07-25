@@ -6,6 +6,12 @@ mermaid: true
 
 # TODO
 
+## Installation
+
+https://chirpy.cotes.page/posts/getting-started/
+
+## Overview
+
 <kbd>YES BABY</kbd>
 
 - [DK4](https://github.com/dennykorsukewitz/DK4)
@@ -23,7 +29,7 @@ mermaid: true
   - [ ] Automatic creation of the ObjectDependencies array.
   - [ ] Automatic quoting with custom markers via keyboard shortcut.
   - [x] Znuny code snippets for fast, consistent and error free coding.
-  - [ ] Using '* ' activation is usually a bad idea as it impacts performance. More info: https://code.visualstudio.com/api/references/activation-events#Start-up
+  - [x] Using '* ' activation is usually a bad idea as it impacts performance. More info: https://code.visualstudio.com/api/references/activation-events#Start-up
   - [x] znuny_pod for VSCode-Znuny
     - [x] rel-6_0-pod
     - [x] rel-6_4-pod
