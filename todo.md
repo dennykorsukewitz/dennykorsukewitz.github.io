@@ -9,6 +9,16 @@ mermaid: true
 ## Installation
 
 https://chirpy.cotes.page/posts/getting-started/
+```
+sudo gem install bundler
+sudo gem install rouge -v 3.30.0
+sudo gem install sass-embedded -v 1.58.3
+sudo gem install jekyll
+```
+
+## Run
+
+.github/workflows/pages/pages.sh
 
 ## Overview
 
