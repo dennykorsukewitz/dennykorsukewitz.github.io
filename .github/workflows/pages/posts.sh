@@ -17,6 +17,9 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   RELEASES=($(gh release list --repo "$OWNER"/"$REPOSITORY" | awk '{print $1}'))
 
   read TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
+
+  TOPICS=$(echo "$TOPICS" | sed 's/\"pages\", //g')
+  echo "TOPICS"
   echo "$TOPICS"
 
   for RELEASE in "${RELEASES[@]}"; do
@@ -73,4 +76,4 @@ EOF
   done
 
 echo -e "\n-----------List all posts-----------\n"
-ls -l "$PAGES"/_posts/
+ls -lA "$PAGES"/_posts/ | awk -F':[0-9]* ' '/:/{print $2}'

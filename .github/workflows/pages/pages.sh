@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # ---
+# Start Pages
+# ---
+# .github/workflows/pages/pages.sh
+
+# ---
 # Step: Delete all
 # ---
 echo -e "\n-----------START delete-----------\n"

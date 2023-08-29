@@ -23,7 +23,7 @@ node_modules
 package-lock.json
 
 # _posts_static
-_posts_static/2023-02-15-TEST.md
+_static/_posts/2023-02-15-TEST.md
 
 # DK4
 index.md
@@ -36,3 +36,4 @@ VSCode-Znuny/
 VSCode-AddFolderToWorkspace/
 MRBS-OTRS/
 VSCode-QuoteWithMarker/
+VSCode-GitHubFileFetcher/
