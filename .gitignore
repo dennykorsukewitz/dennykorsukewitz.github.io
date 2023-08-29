@@ -9,18 +9,35 @@
 !.stylelintrc.json
 TODO.md
 
-# bundler cache
-_site
-_posts
+# Bundler cache
+.bundle
 vendor
 Gemfile.lock
 
-# rubygem
+# Jekyll cache
+.jekyll-cache
+_site
+_posts
+
+# RubyGems
 *.gem
 
-# npm dependencies
+# NPM dependencies
 node_modules
 package-lock.json
+
+# IDE configurations
+.idea
+.vscode
+
+# Misc
+assets/js/dist
+
+# ---
+# DK
+# ---
+
+_tabs/about.md
 
 # _posts_static
 _static/_posts/2023-02-15-TEST.md

@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 5.5", ">= 5.5.2"
+gem "jekyll-theme-chirpy", "~> 6.1"
 
 group :test do
   gem "html-proofer", "~> 3.18"
@@ -26,7 +26,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 if RUBY_PLATFORM =~ /linux-musl/
   gem "jekyll-sass-converter", "~> 2.0"
 end
-
 
 # This plugin does just that. Any Markdown file in your site's source will be treated as a Page and rendered as HTML, even if it doesn't have YAML front matter.
 group :jekyll_plugins do
