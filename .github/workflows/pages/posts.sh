@@ -25,7 +25,11 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   for RELEASE in "${RELEASES[@]}"; do
     echo -e "\n-----------$REPOSITORY - $RELEASE-----------\n"
 
-    read RELEASE_NAME RELEASE_TAG RELEASE_DATE RELEASE_URL RELEASE_TAR_URL RELEASE_ZIP_URL RELEASE_BODY < <(echo $(gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json name --json tagName --json publishedAt --json url --json tarballUrl --json zipballUrl --json body | jq -r '.name, .tagName, .publishedAt, .url, .tarballUrl, .zipballUrl, .body'))
+    read RELEASE_NAME RELEASE_TAG RELEASE_DATE RELEASE_URL RELEASE_TAR_URL RELEASE_ZIP_URL < <(echo $(gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json name --json tagName --json publishedAt --json url --json tarballUrl --json zipballUrl --json body | jq -r '.name, .tagName, .publishedAt, .url, .tarballUrl, .zipballUrl'))
+
+    # gh release view "1.2.0" -R dennykorsukewitz/VSCode-Znuny --json body --jq .body
+    RELEASE_BODY=`gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json body --jq .body`
+
     RELEASE_DATE=$(echo "$RELEASE_DATE" | sed -Ee "s|(T.*)||")
 
     PIN='false'
@@ -45,9 +49,8 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
     echo "RELEASE_ZIP_URL: $RELEASE_ZIP_URL"
     echo "PIN: $PIN"
 
-
     echo ""
-    printf "${RELEASE_BODY}"
+    printf "$RELEASE_BODY"
     echo ""
 
     cat << EOF > "$PAGES"/_posts/"$RELEASE_DATE"-"$REPOSITORY"-Release-"$RELEASE_NAME".md
@@ -65,10 +68,10 @@ pin: $PIN
 
 $RELEASE_BODY
 
+<hr>
+
 - [View this release on GitHub]($RELEASE_URL)
-
 - [Download as .zip]($RELEASE_ZIP_URL)
-
 - [Download as .tar.gz]($RELEASE_TAR_URL)
 
 EOF

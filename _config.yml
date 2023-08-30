@@ -71,7 +71,8 @@ google_site_verification: # fill in to your verification string
 #     dark   - Use the dark color scheme
 #
 
-theme_mode: # [light|dark]
+# theme_mode: # [light|dark]
+theme_mode:
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
