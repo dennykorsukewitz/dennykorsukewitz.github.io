@@ -34,6 +34,9 @@ jobs:
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
       - name: Create _data/files
+        run: pages/.github/workflows/pages/delete.sh
+
+      - name: Create _data/files
         run: pages/.github/workflows/pages/data.sh
 
       - name: Add dennykorsukewitz (GitHub Profile)
