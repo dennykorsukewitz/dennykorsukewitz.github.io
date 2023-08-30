@@ -36,7 +36,6 @@ assets/js/dist
 # ---
 # DK
 # ---
-_data/repositories.yml
 _tabs/about.md
 about.md
 .github/workflows/pages-deploy.yml
