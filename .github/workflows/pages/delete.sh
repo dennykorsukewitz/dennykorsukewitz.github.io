@@ -13,5 +13,5 @@ done
 echo "Delete: _data/repositories.yml"
 rm -f _data/repositories.yml
 
-
-touch _posts/.placeholder
+echo "Delete: _posts/*"
+rm -f _posts/*
