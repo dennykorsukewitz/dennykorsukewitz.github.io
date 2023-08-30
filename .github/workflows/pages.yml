@@ -33,6 +33,9 @@ jobs:
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
+      - name: Create _data/files
+        run: pages/.github/workflows/pages/data.sh
+
       - name: Add dennykorsukewitz (GitHub Profile)
         run: pages/.github/workflows/pages/github-profile.sh
 

@@ -37,13 +37,17 @@ assets/js/dist
 # DK
 # ---
 
+_data/repositories.yml
 _tabs/about.md
+about.md
+.github/workflows/pages-deploy.yml
 
 # _posts_static
 _static/_posts/2022-04-07-TEST.md
 
 # DK4
 index.md
+index.html
 dennykorsukewitz
 
 DK4
