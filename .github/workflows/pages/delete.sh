@@ -10,8 +10,6 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   rm -Rf "$REPOSITORY"
 done
 
-echo "Delete: _data/repositories.yml"
-rm -f _data/repositories.yml
 
 echo "Delete: _posts/*"
 rm -f _posts/*
