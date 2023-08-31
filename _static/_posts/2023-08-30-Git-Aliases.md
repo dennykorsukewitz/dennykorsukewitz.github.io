@@ -1,6 +1,6 @@
 ---
 title: Git-Aliases
-date: 2023-08-29
+date: 2023-08-30
 author: dennykorsukewitz
 categories: [Development, Git]
 tags: [ "git"]

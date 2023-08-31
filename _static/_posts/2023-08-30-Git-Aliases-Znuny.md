@@ -3,7 +3,7 @@ title: Git-Aliases Znuny
 date: 2023-08-30
 author: dennykorsukewitz
 categories: [Development, Git]
-tags: [ "git", "Znuny" ]
+tags: [ "git", "znuny" ]
 toc: true
 pin: true
 ---

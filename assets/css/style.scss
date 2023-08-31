@@ -32,6 +32,18 @@ img[alt="GitHub Top Languages"],
     border-color: #4f81bc;
 }
 
+.access {
+    margin-bottom: 1rem;
+}
+
+.access>div:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+a:hover {
+    color: #000000;
+}
+
 @media (min-width: 1650px){
 
     #search-wrapper {

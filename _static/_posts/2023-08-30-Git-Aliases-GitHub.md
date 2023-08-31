@@ -3,7 +3,7 @@ title: Git-Aliases GitHub
 date: 2023-08-29
 author: dennykorsukewitz
 categories: [Development, Git]
-tags: [ "git", "GitHub" ]
+tags: [ "git", "github" ]
 toc: true
 pin: true
 ---
