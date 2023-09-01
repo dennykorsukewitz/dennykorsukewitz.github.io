@@ -40,9 +40,17 @@ img[alt="GitHub Top Languages"],
     margin-bottom: 1rem;
 }
 
-a:hover {
-    color: #000000;
+#page-category a:hover, #page-tag a:hover, .post-tags .post-tag:hover, .post-tail-wrapper .license-wrapper>a:hover, #search-results a:hover, #topbar #breadcrumb a:hover, .post-content a:not(.img-link):hover, .post-meta a:not([class]):hover, #access-lastmod a:hover, footer a:hover {
+    border-bottom: 2px solid #4f81bc;
 }
+
+.post-tail-wrapper .post-meta a:not(:hover), .post-content a:not(.img-link) {
+    border-bottom: 1px solid var(--link-underline-color);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
 
 @media (min-width: 1650px){
 

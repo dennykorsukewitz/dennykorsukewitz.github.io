@@ -1,6 +1,6 @@
 ---
 title: Znuny Timeline
-date: 2023-08-30
+date: 2023-08-31
 author: dennykorsukewitz
 categories: [Znuny]
 tags: ["znuny"]
@@ -8,6 +8,9 @@ toc: true
 mermaid: true
 pin: true
 ---
+
+> Timeline was last updated on 31.08.2023.
+{: .prompt-warning }
 
 ```mermaid
 gantt
