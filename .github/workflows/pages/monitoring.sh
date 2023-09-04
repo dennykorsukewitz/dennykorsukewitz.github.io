@@ -36,10 +36,14 @@ EOF
 
     echo -e "\n-----------$REPOSITORY - $BRANCHE-----------\n"
       cat << EOF >> "$PAGES"/monitoring.md
-<div class="post-tag btn btn-outline-primary">$BRANCHE</div>
+
+<div class="post-tag btn btn-outline-primary"><a href="https://github.com/$OWNER/$REPOSITORY/actions?query=branch%3A$BRANCHE" target="_blank">$BRANCHE</a></div>
 EOF
 
     WORKFLOWS=($(gh api -XGET /repos/$OWNER/$REPOSITORY/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g'))
+
+    # gh api -XGET https://api.github.com/repos/$OWNER/$REPOSITORY/commits/dev/check-runs --jq '.check_runs[].name' --field 'filter=latest'
+    # echo $WORKFLOWS
 
     for WORKFLOW in "${WORKFLOWS[@]}"; do
       WORKFLOW_NAME=$(echo $WORKFLOW | jq '.name' | sed 's/\"//g')
