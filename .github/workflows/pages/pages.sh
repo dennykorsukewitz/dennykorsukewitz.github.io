@@ -30,11 +30,16 @@ echo -e "\n-----------START repositories-----------\n"
 .github/workflows/pages/repositories.sh
 
 # ---
-# Step: Add Repository List
+# Step: Add Posts List
 # ---
 echo -e "\n-----------START posts-----------\n"
 .github/workflows/pages/posts.sh
 
+# ---
+# Step: Add Monitoring
+# ---
+echo -e "\n-----------START Monitoring-----------\n"
+.github/workflows/pages/monitoring.sh
 
 echo -e "\n-----------START jekyll-----------\n"
 git jekyll-init-serve
