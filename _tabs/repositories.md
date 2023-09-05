@@ -82,11 +82,6 @@ order: 1
                         dev, rel-1_0
                       </a>
                     </span>
-
-                </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
                 </div>
             </div>
         </div>
@@ -170,11 +165,6 @@ order: 1
                         dev, rel-3_3, rel-4_0, rel-5_0, rel-6_0, rel-6_4, rel-6_5
                       </a>
                     </span>
-
-                </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
                 </div>
             </div>
         </div>
@@ -258,11 +248,6 @@ order: 1
                         MRBS-OTRS-1.0, dev
                       </a>
                     </span>
-
-                </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
                 </div>
             </div>
         </div>
@@ -346,11 +331,6 @@ order: 1
                         dev, rel-6_0
                       </a>
                     </span>
-
-                </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
                 </div>
             </div>
         </div>
@@ -434,99 +414,6 @@ order: 1
                         dev
                       </a>
                     </span>
-
-                </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="post-list">
-    <div class="card post-preview flex-md-row-reverse">
-        <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">
-              <a href="/VSCode-QuoteWithMarker">
-                VSCode-QuoteWithMarker
-              </a>
-            </h1>
-            <div class="card-text post-content mt-0 mb-2">
-                <p>
-                    This extension quotes the selected area and adds a custom marker to it.
-                </p>
-            </div>
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-                <div class="me-auto">
-                  <div class="badges">
-                      <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/dennykorsukewitz/VSCode-QuoteWithMarker">
-                      <img alt="GitHub license" src="https://img.shields.io/github/license/dennykorsukewitz/VSCode-QuoteWithMarker">
-                      <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/dennykorsukewitz/VSCode-QuoteWithMarker?style=flat&label=language">
-                      <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/dennykorsukewitz/VSCode-QuoteWithMarker">
-                      <br>
-                      <img alt="GitHub open issues" src="https://img.shields.io/github/issues/dennykorsukewitz/VSCode-QuoteWithMarker">
-                      <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/dennykorsukewitz/VSCode-QuoteWithMarker?color=#44CC44">
-                      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/dennykorsukewitz/VSCode-QuoteWithMarker?label=PR">
-                      <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/dennykorsukewitz/VSCode-QuoteWithMarker?color=g&label=PR">
-                      <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/dennykorsukewitz/VSCode-QuoteWithMarker">
-                    </div>
-                    <br>
-
-                    <i class="far fa-folder-open fa-fw me-1"></i>
-                    <span class="categories">
-                      <a href="/categories/dk4/" title="categories">
-                        DK4
-                      </a>
-                    </span>
-
-                    <i class="fa-solid fa-star fa-fw me-1"></i>
-                    <span class="stars">
-                        <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/stargazers" title="stars" target="_blank">
-                          0
-                        </a>
-                    </span>
-
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker" title="unique / total views" target="_blank">
-                          1 / 50
-                        </a>
-                    </span>
-
-
-                    <i class="fa-regular fa-eye"></i>
-                    <span class="watchers">
-                      <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/watchers" title="watchers" target="_blank">
-                        0
-                      </a>
-                    </span>
-
-
-                    <i class="fa-solid fa-code-fork"></i>
-                    <span class="forks">
-                      <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/forks" title="forks" target="_blank">
-                        0
-                      </a>
-                    </span>
-
-                    <i class="fa-solid fa-language"></i>
-                    <span class="forks">
-                        JavaScript
-                    </span>
-
-                    <i class="fa-solid fa-code-branch"></i>
-                    <span class="branches">
-                      <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/branches" title="branches" target="_blank">
-                        dev
-                      </a>
-                    </span>
-
-                </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
                 </div>
             </div>
         </div>
@@ -610,11 +497,89 @@ order: 1
                         dev
                       </a>
                     </span>
-
                 </div>
-                <div class="pin ms-1">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                    <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="post-list">
+    <div class="card post-preview flex-md-row-reverse">
+        <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">
+              <a href="/VSCode-QuoteWithMarker">
+                VSCode-QuoteWithMarker
+              </a>
+            </h1>
+            <div class="card-text post-content mt-0 mb-2">
+                <p>
+                    This extension quotes the selected area and adds a custom marker to it.
+                </p>
+            </div>
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <div class="badges">
+                      <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/dennykorsukewitz/VSCode-QuoteWithMarker">
+                      <img alt="GitHub license" src="https://img.shields.io/github/license/dennykorsukewitz/VSCode-QuoteWithMarker">
+                      <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/dennykorsukewitz/VSCode-QuoteWithMarker?style=flat&label=language">
+                      <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/dennykorsukewitz/VSCode-QuoteWithMarker">
+                      <br>
+                      <img alt="GitHub open issues" src="https://img.shields.io/github/issues/dennykorsukewitz/VSCode-QuoteWithMarker">
+                      <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/dennykorsukewitz/VSCode-QuoteWithMarker?color=#44CC44">
+                      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/dennykorsukewitz/VSCode-QuoteWithMarker?label=PR">
+                      <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/dennykorsukewitz/VSCode-QuoteWithMarker?color=g&label=PR">
+                      <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/dennykorsukewitz/VSCode-QuoteWithMarker">
+                    </div>
+                    <br>
+
+                    <i class="far fa-folder-open fa-fw me-1"></i>
+                    <span class="categories">
+                      <a href="/categories/dk4/" title="categories">
+                        DK4
+                      </a>
+                    </span>
+
+                    <i class="fa-solid fa-star fa-fw me-1"></i>
+                    <span class="stars">
+                        <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/stargazers" title="stars" target="_blank">
+                          0
+                        </a>
+                    </span>
+
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker" title="unique / total views" target="_blank">
+                          1 / 50
+                        </a>
+                    </span>
+
+
+                    <i class="fa-regular fa-eye"></i>
+                    <span class="watchers">
+                      <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/watchers" title="watchers" target="_blank">
+                        0
+                      </a>
+                    </span>
+
+
+                    <i class="fa-solid fa-code-fork"></i>
+                    <span class="forks">
+                      <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/forks" title="forks" target="_blank">
+                        0
+                      </a>
+                    </span>
+
+                    <i class="fa-solid fa-language"></i>
+                    <span class="forks">
+                        JavaScript
+                    </span>
+
+                    <i class="fa-solid fa-code-branch"></i>
+                    <span class="branches">
+                      <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker/branches" title="branches" target="_blank">
+                        dev
+                      </a>
+                    </span>
                 </div>
             </div>
         </div>

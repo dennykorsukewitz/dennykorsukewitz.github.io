@@ -3,6 +3,7 @@
 OWNER="dennykorsukewitz"
 REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name))
 REPOSITORIES+=("DK4")
+REPOSITORIES+=("dennykorsukewitz.github.io")
 
 # REPOSITORIES="dennykorsukewitz"
 
