@@ -16,6 +16,15 @@ img[alt="GitHub Top Languages"],
     height: 195px;
 }
 
+.post-preview::before {
+    content: unset;
+}
+
+.post-preview:hover {
+    background-color: var(--card-hovor-bg);
+    transition: opacity .35s ease-in-out;
+}
+
 .github-repository {
     width:  350px;
     height: 150px;

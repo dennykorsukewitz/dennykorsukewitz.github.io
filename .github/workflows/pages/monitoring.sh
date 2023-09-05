@@ -23,7 +23,6 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
   echo -e "\n-----------$REPOSITORY-----------\n"
 
-
   UNIQUE_VIEWS=`gh api -XGET https://api.github.com/repos/$OWNER/$REPOSITORY/traffic/views --jq .uniques`
   TOTAL_VIEWS=`gh api -XGET https://api.github.com/repos/$OWNER/$REPOSITORY/traffic/views --jq .count`
   BRANCHES=($(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name' ))

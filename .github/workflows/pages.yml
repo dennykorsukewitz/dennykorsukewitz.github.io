@@ -45,6 +45,9 @@ jobs:
       - name: Add Monitoring
         run: pages/.github/workflows/pages/monitoring.sh
 
+      - name: Add Repository Tab
+        run: pages/.github/workflows/pages/repositories_tab.sh
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v1

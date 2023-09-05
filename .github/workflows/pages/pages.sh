@@ -30,7 +30,13 @@ echo -e "\n-----------START repositories-----------\n"
 .github/workflows/pages/repositories.sh
 
 # ---
-# Step: Add Posts List
+# Step: Add Repository Tab
+# ---
+echo -e "\n-----------START repositories-----------\n"
+.github/workflows/pages/repositories_tab.sh
+
+# ---
+# Step: Create release blog posts
 # ---
 echo -e "\n-----------START posts-----------\n"
 .github/workflows/pages/posts.sh
