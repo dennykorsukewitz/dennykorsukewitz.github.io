@@ -38,6 +38,11 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   REPOSITORY_WATCHERS=`echo $REPOSITORY_JSON | jq .watchers_count | sed 's/^\"//g' | sed 's/\"$//g' | sed 's/\\\"/\"/g'`
   REPOSITORY_LANGUAGE=`echo $REPOSITORY_JSON | jq .language | sed 's/^\"//g' | sed 's/\"$//g' | sed 's/\\\"/\"/g'`
 
+
+echo "$REPOSITORY_STARS"
+echo "$REPOSITORY_FORKS"
+echo "$REPOSITORY_WATCHERS"
+
   cat << EOF >> "$PAGES"/_tabs/repositories.md
 <div id="post-list">
     <div class="card post-preview flex-md-row-reverse">
