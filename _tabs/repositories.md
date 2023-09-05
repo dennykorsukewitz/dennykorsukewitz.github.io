@@ -48,12 +48,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/VSCode-Znuny" title="unique / total views" target="_blank">
-                          7 / 253
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -82,6 +76,15 @@ order: 1
                         dev, rel-1_0
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/VSCode-Znuny" title="unique / total views" target="_blank">
+                          7 / 277
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
@@ -131,12 +134,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/DK4Znuny-QuickDelete" title="unique / total views" target="_blank">
-                          1 / 38
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -165,6 +162,15 @@ order: 1
                         dev, rel-3_3, rel-4_0, rel-5_0, rel-6_0, rel-6_4, rel-6_5
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/DK4Znuny-QuickDelete" title="unique / total views" target="_blank">
+                          1 / 38
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
@@ -214,12 +220,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/MRBS-OTRS" title="unique / total views" target="_blank">
-                          1 / 2
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -248,6 +248,15 @@ order: 1
                         MRBS-OTRS-1.0, dev
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/MRBS-OTRS" title="unique / total views" target="_blank">
+                          1 / 2
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
@@ -297,12 +306,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/DK4OTRS-UBInventory" title="unique / total views" target="_blank">
-                          0 / 0
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -331,6 +334,15 @@ order: 1
                         dev, rel-6_0
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/DK4OTRS-UBInventory" title="unique / total views" target="_blank">
+                          0 / 0
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
@@ -380,12 +392,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/VSCode-GitHubFileFetcher" title="unique / total views" target="_blank">
-                          2 / 79
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -414,6 +420,15 @@ order: 1
                         dev
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/VSCode-GitHubFileFetcher" title="unique / total views" target="_blank">
+                          2 / 79
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
@@ -463,12 +478,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/VSCode-AddFolderToWorkspace" title="unique / total views" target="_blank">
-                          1 / 88
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -497,6 +506,15 @@ order: 1
                         dev
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/VSCode-AddFolderToWorkspace" title="unique / total views" target="_blank">
+                          1 / 88
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
@@ -546,12 +564,6 @@ order: 1
                         </a>
                     </span>
 
-                    <i class="fa-solid fa-eye"></i>
-                    <span class="views">
-                        <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker" title="unique / total views" target="_blank">
-                          1 / 50
-                        </a>
-                    </span>
 
 
                     <i class="fa-regular fa-eye"></i>
@@ -580,6 +592,15 @@ order: 1
                         dev
                       </a>
                     </span>
+
+                    <!--
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="views">
+                        <a href="https://github.com/dennykorsukewitz/VSCode-QuoteWithMarker" title="unique / total views" target="_blank">
+                          1 / 50
+                        </a>
+                    </span>
+                    -->
                 </div>
             </div>
         </div>
