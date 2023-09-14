@@ -57,6 +57,25 @@ img[alt="GitHub Top Languages"],
     border-bottom: 1px solid var(--link-underline-color);
 }
 
+#sidebar .sidebar-bottom .mode-toggle, #sidebar .sidebar-bottom .color-mode-toggle, #sidebar .sidebar-bottom a {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    color: var(--sidebar-btn-color);
+    background-color: var(--sidebar-btn-bg);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom .color-mode-toggle:hover, #sidebar .sidebar-bottom a:hover {
+    background-color: var(--sidebar-hover-bg);
+}
+#sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom .color-mode-toggle:hover, #sidebar .sidebar-bottom a:hover, #sidebar .site-title a:hover {
+    color: var(--sidebar-active-color);
+}
 
 @media (min-width: 1650px){
 
