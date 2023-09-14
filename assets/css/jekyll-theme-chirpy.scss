@@ -4,3 +4,75 @@
 @import 'main';
 
 /* append your custom style below */
+
+img[alt="GitHub Top Languages"],
+.github-stats {
+    height: 195px;
+}
+
+.post-preview::before {
+    content: unset;
+}
+
+.post-preview:hover {
+    background-color: var(--card-hovor-bg);
+    transition: opacity .35s ease-in-out;
+}
+
+.github-repository {
+    width:  350px;
+    height: 150px;
+}
+
+/*.post-tail-wrapper .post-meta a:not(:hover), .post-content a:not(.img-link),*/
+.repository a{
+    border-bottom: none !important;
+    color: var(--text-color);
+}
+
+#panel-wrapper .post-tag:hover {
+    background-color: #4f81bc;
+    border-color: #4f81bc;
+}
+
+.access {
+    margin-bottom: 1rem;
+}
+
+.access>div:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+#page-category a:hover, #page-tag a:hover, .post-tags .post-tag:hover, .post-tail-wrapper .license-wrapper>a:hover, #search-results a:hover, #topbar #breadcrumb a:hover, .post-content a:not(.img-link):hover, .post-meta a:not([class]):hover, #access-lastmod a:hover, footer a:hover {
+    border-bottom: 2px solid #4f81bc;
+}
+
+.post-tail-wrapper .post-meta a:not(:hover), .post-content a:not(.img-link) {
+    border-bottom: 1px solid var(--link-underline-color);
+}
+
+
+@media (min-width: 1650px){
+
+    #search-wrapper {
+        margin-right: calc( 1250px * 0.25 - 160px - 0.75rem );
+    }
+
+    #topbar, #main, footer>.container {
+        max-width: inherit;
+    }
+
+    #sidebar .profile-wrapper #avatar {
+        margin-left: 2.75rem
+    }
+
+    #sidebar .profile-wrapper .site-subtitle,
+    #sidebar .profile-wrapper .site-title{
+        margin-left: -2rem;
+        text-align: center;
+    }
+
+    #sidebar .profile-wrapper.text-center {
+        text-align: center !important;
+    }
+}
