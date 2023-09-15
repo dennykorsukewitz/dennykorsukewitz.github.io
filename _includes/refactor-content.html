@@ -168,7 +168,7 @@
         {% assign popup_class = '' %}
       {% endif %}
         <!-- <a href="{{ _final_src | default: _src  }}" class="popup img-link {{ _class }}"> -->
-        <a href="{{ _final_src | default: _src  }}" class="{{ popup_class }} img-link {{ _class }} ">
+      <div class="preview-img {{ _class | strip }} {{ popup_class }}">
       <!-- dennykorsukewitz.github.io end -->
 
       {%- endcapture -%}
