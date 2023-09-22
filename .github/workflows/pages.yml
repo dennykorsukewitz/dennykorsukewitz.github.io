@@ -110,9 +110,6 @@ jobs:
       - name: Install capture-website-cli
         run: npm install --global capture-website-cli
 
-      #- name: Install chrome
-      #  uses: browser-actions/setup-chrome@v1
-
       - name: Screenshots
         run: pages/.github/workflows/pages/screenshots.sh
 
