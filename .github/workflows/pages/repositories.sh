@@ -18,7 +18,6 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
   MARKDOWN_FILES=($(find "$PAGES"/"$REPOSITORY" -name "*.md" -print0 | xargs -0 -I file))
   
-  find "$PAGES"/"$REPOSITORY" -not -name "*.md" -exec rm -R {} \;
   # find "$PAGES"/"$REPOSITORY" -type d -not -name doc -not -name logs -exec rm -R {} \;
   for MARKDOWN_FILE in "${MARKDOWN_FILES[@]}"; do
 
@@ -50,8 +49,10 @@ toc: true
     echo -e "\n-----------FILE-----------\n"
     cat "$FILE_PATH"
 
+
   done
 
   mv "$PAGES"/"$REPOSITORY"/README.md "$PAGES"/"$REPOSITORY"/index.md
+  find "$PAGES"/"$REPOSITORY" -not -name "*.md" -exec rm -R {} \;
 
 done
