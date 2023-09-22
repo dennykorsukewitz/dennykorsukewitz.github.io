@@ -1,5 +1,40 @@
 
 # Screenshots
+## DK4OTRS-UBInventory
+
+![DK4OTRS-UBInventory](assets/img/screenshots/Screenshot-DK4OTRS-UBInventory.png)
+![DK4OTRS-UBInventory](assets/img/screenshots/Screenshot-DK4OTRS-UBInventory-Dark.png)
+
+## DK4Znuny-QuickDelete
+
+![DK4Znuny-QuickDelete](assets/img/screenshots/Screenshot-DK4Znuny-QuickDelete.png)
+![DK4Znuny-QuickDelete](assets/img/screenshots/Screenshot-DK4Znuny-QuickDelete-Dark.png)
+
+## MRBS-OTRS
+
+![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS.png)
+![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS-Dark.png)
+
+## VSCode-AddFolderToWorkspace
+
+![VSCode-AddFolderToWorkspace](assets/img/screenshots/Screenshot-VSCode-AddFolderToWorkspace.png)
+![VSCode-AddFolderToWorkspace](assets/img/screenshots/Screenshot-VSCode-AddFolderToWorkspace-Dark.png)
+
+## VSCode-GitHubFileFetcher
+
+![VSCode-GitHubFileFetcher](assets/img/screenshots/Screenshot-VSCode-GitHubFileFetcher.png)
+![VSCode-GitHubFileFetcher](assets/img/screenshots/Screenshot-VSCode-GitHubFileFetcher-Dark.png)
+
+## VSCode-QuoteWithMarker
+
+![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker.png)
+![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker-Dark.png)
+
+## VSCode-Znuny
+
+![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny.png)
+![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny-Dark.png)
+
 ## Repositories
 
 ![Repositories](assets/img/screenshots/Screenshot-Repositories.png)
