@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OWNER="dennykorsukewitz"
-REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name))
+REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name | sort))
 
 # REPOSITORIES="dennykorsukewitz"
 

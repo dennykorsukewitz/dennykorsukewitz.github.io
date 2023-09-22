@@ -40,6 +40,7 @@ _tabs/about.md
 _tabs/repositories.md
 about.md
 .github/workflows/pages-deploy.yml
+engine.bin
 
 # _posts_static
 _static/_posts/2022-04-07-TEST.md

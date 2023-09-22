@@ -1,0 +1,29 @@
+name: Screenshot
+on:
+  push:
+  pull_request:
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  Screenshot:
+    name: Screenshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dennykorsukewitz.github.io
+        uses: actions/checkout@v4
+        env:
+          fetch-depth: "1"
+        with:
+          path: pages
+
+      - name: Install capture-website-cli
+        run: npm install --global capture-website-cli
+
+      - name: Screenshots
+        run: pages/.github/workflows/pages/screenshots.sh
+
+      - name: Add and Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Updated Screenshots.'
+          cwd: './pages'

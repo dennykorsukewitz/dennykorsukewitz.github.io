@@ -31,7 +31,6 @@ jobs:
     runs-on: ubuntu-22.04 # ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-      REPOSITORIES: 'DK4 VSCode-Znuny VSCode-AddFolderToWorkspace DK4Znuny-QuickDelete DK4OTRS-UBInventory MRBS-OTRS'
     steps:
       - name: Checkout dennykorsukewitz.github.io
         uses: actions/checkout@v4
@@ -95,3 +94,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+  Screenshot:
+    name: Screenshot
+    runs-on: ubuntu-latest
+    needs: Deploy
+    steps:
+      - name: Checkout dennykorsukewitz.github.io
+        uses: actions/checkout@v4
+        env:
+          fetch-depth: "1"
+        with:
+          path: pages
+
+      - name: Install capture-website-cli
+        run: npm install --global capture-website-cli
+
+      #- name: Install chrome
+      #  uses: browser-actions/setup-chrome@v1
+
+      - name: Screenshots
+        run: pages/.github/workflows/pages/screenshots.sh
+
+      - name: Add and Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Updated Screenshots.'
