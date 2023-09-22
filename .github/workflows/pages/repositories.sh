@@ -53,6 +53,6 @@ toc: true
   done
 
   mv "$PAGES"/"$REPOSITORY"/README.md "$PAGES"/"$REPOSITORY"/index.md
-  find "$PAGES"/"$REPOSITORY" -not -name "*.md" -exec rm -R {} \;
+ # find "$PAGES"/"$REPOSITORY" -not -name "*.md" -exec rm -R {} \;
 
 done
