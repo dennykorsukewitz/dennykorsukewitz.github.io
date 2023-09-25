@@ -17,8 +17,7 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   read TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
 
   MARKDOWN_FILES=($(find "$PAGES"/"$REPOSITORY" -name "*.md" -print0 | xargs -0 -I file))
-  
-  # find "$PAGES"/"$REPOSITORY" -type d -not -name doc -not -name logs -exec rm -R {} \;
+
   for MARKDOWN_FILE in "${MARKDOWN_FILES[@]}"; do
 
     echo -e "\n-----------MARKDOWN_FILE-----------\n"
@@ -48,11 +47,14 @@ toc: true
 
     echo -e "\n-----------FILE-----------\n"
     cat "$FILE_PATH"
-
-
   done
 
   mv "$PAGES"/"$REPOSITORY"/README.md "$PAGES"/"$REPOSITORY"/index.md
- # find "$PAGES"/"$REPOSITORY" -not -name "*.md" -exec rm -R {} \;
+
+  # remove all file but ("*.md"|"*.png"|"*.gif")
+  find "$PAGES"/"$REPOSITORY" -type f -not -name "*.md" -not -name "*.png" -not -name "*.gif" -exec rm -Rf {} \;
+
+  # remove all empty folder
+  find "$PAGES"/"$REPOSITORY" -type d -empty -delete
 
 done
