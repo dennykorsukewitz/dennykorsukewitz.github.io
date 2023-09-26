@@ -32,7 +32,7 @@ echo -e "\n-----------START repositories-----------\n"
 # ---
 # Step: Add Repository Tab
 # ---
-echo -e "\n-----------START repositories-----------\n"
+echo -e "\n-----------START repositories_tab-----------\n"
 .github/workflows/pages/repositories_tab.sh
 
 # ---
