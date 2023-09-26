@@ -1,6 +1,7 @@
 ---
 title: Znuny Timeline
-date: 2023-08-31
+date: 2023-08-30
+last_modified_at: 2023-09-26
 author: dennykorsukewitz
 categories: [Znuny]
 tags: ["znuny"]
@@ -9,7 +10,7 @@ mermaid: true
 pin: true
 ---
 
-> Timeline was last updated on 31.08.2023.
+> Timeline was last updated on 26.09.2023.
 {: .prompt-warning }
 
 ```mermaid
@@ -69,11 +70,10 @@ gantt
     6.5.1 :done,   6_5_1, 2023-03-09,  2023-04-19
     6.5.2 :done,   6_5_2, after 6_5_1, 2023-06-14
     6.5.3 :done,   6_5_3, after 6_5_2, 2023-08-23
-    6.5.4 :active, 6_5_4, after 6_5_3, 2023-09-20
+    6.5.4 :active, 6_5_4, after 6_5_3, 2023-12-13
 
     section Znuny 7.0
-
-    7.0.1  :milestone,    7_0_1,  2023-03-29,      2023-03-30
+    7.0.1  :milestone,    7_0_1,  2023-03-29,       2023-03-30
     7.0.2  :done,         7_0_2,  after 7_0_1,      2023-04-19
     7.0.3  :done,         7_0_3,  after 7_0_2,      2023-05-03
     7.0.4  :done,         7_0_4,  after 7_0_3,      2023-05-17
@@ -82,5 +82,8 @@ gantt
     7.0.7  :done,         7_0_7,  after 7_0_6,      2023-07-12
     7.0.8  :done,         7_0_8,  after 7_0_7,      2023-07-26
     7.0.9  :done,         7_0_9,  after 7_0_8,      2023-08-23
-    7.0.10 :active        7_0_10, after 7_0_9,   2023-09-20
+    7.0.10 :done,         7_0_10, after 7_0_9,      2023-09-20
+    7.0.11 :active,       7_0_11, after 7_0_10,     2023-10-18
+    7.0.12 :active,       7_0_12, after 7_0_11,     2023-11-15
+    7.0.13 :active,       7_0_13, after 7_0_12,     2023-12-13
 ```
