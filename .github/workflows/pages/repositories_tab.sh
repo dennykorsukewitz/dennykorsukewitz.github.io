@@ -117,14 +117,12 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
                           </a>
                         </span>
 
-                        <!--
                         <i class="fa-solid fa-eye"></i>
                         <span class="views">
                             <a href="https://github.com/$OWNER/$REPOSITORY" title="unique / total views" target="_blank">
                               $UNIQUE_VIEWS / $TOTAL_VIEWS
                             </a>
                         </span>
-                        -->
                     </div>
                 </div>
             </div>
