@@ -1,13 +1,7 @@
 ---
 ---
 
-/*
-  If the number of TAB files has changed, the following variable is required.
-  And it must be defined before `@import`.
-*/
-/*$tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab*/
-
-@import "jekyll-theme-chirpy";
+@import 'main';
 
 /* append your custom style below */
 
@@ -57,34 +51,16 @@ img[alt="GitHub Top Languages"],
     border-bottom: 1px solid var(--link-underline-color);
 }
 
-#sidebar .sidebar-bottom .mode-toggle, #sidebar .sidebar-bottom .color-mode-toggle, #sidebar .sidebar-bottom a {
-    width: 1.75rem;
-    height: 1.75rem;
-    margin-bottom: 0.5rem;
-    border-radius: 50%;
-    color: var(--sidebar-btn-color);
-    background-color: var(--sidebar-btn-bg);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom .color-mode-toggle:hover, #sidebar .sidebar-bottom a:hover {
-    background-color: var(--sidebar-hover-bg);
-}
-#sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom .color-mode-toggle:hover, #sidebar .sidebar-bottom a:hover, #sidebar .site-title a:hover {
-    color: var(--sidebar-active-color);
-}
-
 @media (min-width: 1650px){
-
-    #search-wrapper {
-        margin-right: calc( 1250px * 0.25 - 160px - 0.75rem );
-    }
 
     #topbar, #main, footer>.container {
         max-width: inherit;
+    }
+
+    #main-wrapper>.container {
+        max-width: 1600px;
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
     }
 
     #sidebar .profile-wrapper #avatar {
@@ -100,5 +76,30 @@ img[alt="GitHub Top Languages"],
     #sidebar .profile-wrapper.text-center {
         text-align: center !important;
     }
+
+    /* color-mode-toggle */
+
+    #sidebar .sidebar-bottom .mode-toggle, #sidebar .sidebar-bottom .color-mode-toggle, #sidebar .sidebar-bottom a {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-bottom: 0.5rem;
+        border-radius: 50%;
+        color: var(--sidebar-btn-color);
+        background-color: var(--sidebar-btn-bg);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom .color-mode-toggle:hover, #sidebar .sidebar-bottom a:hover {
+        background-color: var(--sidebar-hover-bg);
+    }
+
+    #sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom .color-mode-toggle:hover, #sidebar .sidebar-bottom a:hover, #sidebar .site-title a:hover {
+        color: var(--sidebar-active-color);
+    }
+
+    /* color-mode-toggle */
 }
 

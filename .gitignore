@@ -7,7 +7,6 @@
 !.commitlintrc.json
 !.versionrc.json
 !.stylelintrc.json
-TODO.md
 
 # Bundler cache
 .bundle
@@ -17,7 +16,6 @@ Gemfile.lock
 # Jekyll cache
 .jekyll-cache
 _site
-_posts/*
 
 # RubyGems
 *.gem
@@ -36,10 +34,13 @@ assets/js/dist
 # ---
 # DK
 # ---
+TODO.md
+_posts/*
 _tabs/about.md
 _tabs/repositories.md
 about.md
 .github/workflows/pages-deploy.yml
+engine.bin
 
 # _posts_static
 _static/_posts/2022-04-07-TEST.md

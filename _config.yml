@@ -195,6 +195,7 @@ include:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - docs
   - tools
   - README.md
   - CHANGELOG.md

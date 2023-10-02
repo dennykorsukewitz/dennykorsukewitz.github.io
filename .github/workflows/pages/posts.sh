@@ -2,7 +2,7 @@
 
 
 OWNER="dennykorsukewitz"
-REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name))
+REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name | sort))
 
 PAGES='pages'
 if [ -z "$GITHUB_WORKSPACE" ];then
@@ -19,8 +19,8 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   read TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
 
   TOPICS=$(echo "$TOPICS" | sed 's/\"pages\", //g')
-  echo "TOPICS"
-  echo "$TOPICS"
+  # echo "TOPICS"
+  # echo "$TOPICS"
 
   for RELEASE in "${RELEASES[@]}"; do
     echo -e "\n-----------$REPOSITORY - $RELEASE-----------\n"
@@ -41,17 +41,17 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
       LAST_MODIFIED_AT="last_modified_at: $RELEASE_DATE"
     fi
 
-    echo "RELEASE_NAME: $RELEASE_NAME"
-    echo "RELEASE_TAG: $RELEASE_TAG"
-    echo "RELEASE_DATE: $RELEASE_DATE"
-    echo "RELEASE_URL: $RELEASE_URL"
-    echo "RELEASE_TAR_URL: $RELEASE_TAR_URL"
-    echo "RELEASE_ZIP_URL: $RELEASE_ZIP_URL"
-    echo "PIN: $PIN"
+    # echo "RELEASE_NAME: $RELEASE_NAME"
+    # echo "RELEASE_TAG: $RELEASE_TAG"
+    # echo "RELEASE_DATE: $RELEASE_DATE"
+    # echo "RELEASE_URL: $RELEASE_URL"
+    # echo "RELEASE_TAR_URL: $RELEASE_TAR_URL"
+    # echo "RELEASE_ZIP_URL: $RELEASE_ZIP_URL"
+    # echo "PIN: $PIN"
 
-    echo ""
-    printf "$RELEASE_BODY"
-    echo ""
+    # echo ""
+    # printf "$RELEASE_BODY"
+    # echo ""
 
     cat << EOF > "$PAGES"/_posts/"$RELEASE_DATE"-"$REPOSITORY"-Release-"$RELEASE_NAME".md
 ---

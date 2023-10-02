@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OWNER="dennykorsukewitz"
-REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name))
+REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name | sort))
 REPOSITORIES+=("DK4")
 
 PAGES='pages'
@@ -17,10 +17,11 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
   read TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
 
   MARKDOWN_FILES=($(find "$PAGES"/"$REPOSITORY" -name "*.md" -print0 | xargs -0 -I file))
+
   for MARKDOWN_FILE in "${MARKDOWN_FILES[@]}"; do
 
-    echo -e "\n-----------MARKDOWN_FILE-----------\n"
-    echo "$MARKDOWN_FILE"
+    # echo -e "\n-----------MARKDOWN_FILE-----------\n"
+    # echo "$MARKDOWN_FILE"
 
     FILE_PATH="$MARKDOWN_FILE"
     FILE_NAME="$(basename $FILE_PATH)"
@@ -44,11 +45,16 @@ toc: true
       sed -i 's/.md)/)/g' "$FILE_PATH"
     fi
 
-    echo -e "\n-----------FILE-----------\n"
-    cat "$FILE_PATH"
-
+    # echo -e "\n-----------FILE-----------\n"
+    # cat "$FILE_PATH"
   done
 
   mv "$PAGES"/"$REPOSITORY"/README.md "$PAGES"/"$REPOSITORY"/index.md
+
+  # remove all file but ("*.md"|"*.png"|"*.gif")
+  find "$PAGES"/"$REPOSITORY" -type f -not -name "*.md" -not -name "*.png" -not -name "*.gif" -exec rm -Rf {} \;
+
+  # remove all empty folder
+  find "$PAGES"/"$REPOSITORY" -type d -empty -delete
 
 done
