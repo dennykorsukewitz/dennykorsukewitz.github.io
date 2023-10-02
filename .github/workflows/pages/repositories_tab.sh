@@ -110,18 +110,18 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
                             $REPOSITORY_LANGUAGE
                         </span>
 
+                        <i class="fa-solid fa-eye"></i>
+                        <span class="views">
+                            <a href="https://github.com/$OWNER/$REPOSITORY" title="unique / total views last 14 days" target="_blank">
+                              $UNIQUE_VIEWS / $TOTAL_VIEWS
+                            </a>
+                        </span>
+
                         <i class="fa-solid fa-code-branch"></i>
                         <span class="branches">
                           <a href="https://github.com/$OWNER/$REPOSITORY/branches" title="branches" target="_blank">
                             $BRANCHES_STRING
                           </a>
-                        </span>
-
-                        <i class="fa-solid fa-eye"></i>
-                        <span class="views">
-                            <a href="https://github.com/$OWNER/$REPOSITORY" title="unique / total views" target="_blank">
-                              $UNIQUE_VIEWS / $TOTAL_VIEWS
-                            </a>
                         </span>
                     </div>
                 </div>
