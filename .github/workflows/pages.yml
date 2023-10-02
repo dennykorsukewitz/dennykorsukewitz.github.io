@@ -30,7 +30,7 @@ jobs:
   Build:
     runs-on: ubuntu-22.04 # ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ secrets.PAT }}
     steps:
       - name: Checkout dennykorsukewitz.github.io
         uses: actions/checkout@v4
