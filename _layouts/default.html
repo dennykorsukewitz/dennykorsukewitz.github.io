@@ -22,7 +22,9 @@ layout: compress
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="{{ site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
-
+  <!-- dennykorsukewitz.github.io start -->
+  {% include color-mode-toggle.html %}
+  <!-- dennykorsukewitz.github.io end -->
   <body>
     {% include sidebar.html lang=lang %}
 
