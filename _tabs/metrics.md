@@ -7,7 +7,157 @@ order: 6
 > <iframe src="https://github.com/sponsors/dennykorsukewitz/button" title="Sponsor dennykorsukewitz" height="32" width="114" style="border: 1; border-radius: 6px;"></iframe>
 {: .prompt-tip }
 
-![Stargazers](https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/stargazers.graph.svg){: .shadow .left }
+<div>
+  <canvas id="GitHubStars"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--Line below added, added date adapter for time scale -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+<script>
+    const ctx = document.getElementById('GitHubStars');
+    let url = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
+
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((github_data) => {
+
+            let chart = new Chart(ctx, {
+                data: {
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'Total',
+                            data: github_data,
+                            borderColor: '#4f81bc',
+                            tension: 0.1,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'total',
+                            }
+                        },
+                        {
+                            label: 'DK4OTRS-UBInventory',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'DK4OTRS-UBInventory',
+                            }
+                        },
+                        {
+                            label: 'DK4Znuny-QuickDelete',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'DK4Znuny-QuickDelete',
+                            }
+                        },
+                        {
+                            label: 'MRBS-OTRS',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'MRBS-OTRS',
+                            }
+                        },
+                        {
+                            label: 'VSCode-AddFolderToWorkspace',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-AddFolderToWorkspace',
+                            }
+                        },
+                        {
+                            label: 'VSCode-GitHubFileFetcher',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-GitHubFileFetcher',
+                            }
+                        },
+                        {
+                            label: 'VSCode-Znuny',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-Znuny',
+                            }
+                        },
+                        {
+                            label: 'dennykorsukewitz',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'dennykorsukewitz',
+                            }
+                        },
+                        {
+                            label: 'dennykorsukewitz.github.io',
+                            type: 'line',
+                            data: github_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'dennykorsukewitz.github.io',
+                            }
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            min: 0,
+                        },
+                        xAxis: {
+                            type: 'time',
+                            weight: 1,
+                            time: {
+                                unit: 'year'
+                            },
+                        }
+                    },
+                    plugins: {
+                        colors: {
+                            forceOverride: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'GitHub Stars'
+                        },
+                    }
+                }
+            }
+        );
+    })
+</script>
+
 
 ![Sponsors](https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/sponsors.svg){: .shadow .left }
 
