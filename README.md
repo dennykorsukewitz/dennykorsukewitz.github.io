@@ -1,4 +1,3 @@
-
 # Screenshots
 ## DK4OTRS-UBInventory
 
@@ -64,4 +63,3 @@
 
 ![Metrics](assets/img/screenshots/Screenshot-Metrics.png)
 ![Metrics](assets/img/screenshots/Screenshot-Metrics-Dark.png)
-
