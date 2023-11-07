@@ -15,6 +15,11 @@
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS.png)
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS-Dark.png)
 
+## Sublime-QuoteWithMarker
+
+![Sublime-QuoteWithMarker](assets/img/screenshots/Screenshot-Sublime-QuoteWithMarker.png)
+![Sublime-QuoteWithMarker](assets/img/screenshots/Screenshot-Sublime-QuoteWithMarker-Dark.png)
+
 ## VSCode-AddFolderToWorkspace
 
 ![VSCode-AddFolderToWorkspace](assets/img/screenshots/Screenshot-VSCode-AddFolderToWorkspace.png)
