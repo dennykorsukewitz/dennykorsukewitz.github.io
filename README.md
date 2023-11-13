@@ -15,6 +15,11 @@
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS.png)
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS-Dark.png)
 
+## Sublime-GitHubFileFetcher
+
+![Sublime-GitHubFileFetcher](assets/img/screenshots/Screenshot-Sublime-GitHubFileFetcher.png)
+![Sublime-GitHubFileFetcher](assets/img/screenshots/Screenshot-Sublime-GitHubFileFetcher-Dark.png)
+
 ## Sublime-QuoteWithMarker
 
 ![Sublime-QuoteWithMarker](assets/img/screenshots/Screenshot-Sublime-QuoteWithMarker.png)
