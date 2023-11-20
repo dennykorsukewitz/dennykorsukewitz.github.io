@@ -5,11 +5,6 @@
 ![DK4OTRS-UBInventory](assets/img/screenshots/Screenshot-DK4OTRS-UBInventory.png)
 ![DK4OTRS-UBInventory](assets/img/screenshots/Screenshot-DK4OTRS-UBInventory-Dark.png)
 
-## DK4Znuny-QuickDelete
-
-![DK4Znuny-QuickDelete](assets/img/screenshots/Screenshot-DK4Znuny-QuickDelete.png)
-![DK4Znuny-QuickDelete](assets/img/screenshots/Screenshot-DK4Znuny-QuickDelete-Dark.png)
-
 ## MRBS-OTRS
 
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS.png)
@@ -44,6 +39,11 @@
 
 ![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny.png)
 ![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny-Dark.png)
+
+## Znuny-QuickDelete
+
+![Znuny-QuickDelete](assets/img/screenshots/Screenshot-Znuny-QuickDelete.png)
+![Znuny-QuickDelete](assets/img/screenshots/Screenshot-Znuny-QuickDelete-Dark.png)
 
 ## Repositories
 
