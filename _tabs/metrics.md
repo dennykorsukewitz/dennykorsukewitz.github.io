@@ -41,25 +41,25 @@ order: 6
                             }
                         },
                         {
-                            label: 'DK4OTRS-UBInventory',
+                            label: 'Znuny-UBInventory',
                             type: 'line',
                             data: github_data,
                             tension: 0.1,
                             spanGaps: true,
                             parsing: {
                                 xAxisKey: 'date',
-                                yAxisKey: 'DK4OTRS-UBInventory',
+                                yAxisKey: 'Znuny-UBInventory',
                             }
                         },
                         {
-                            label: 'DK4Znuny-QuickDelete',
+                            label: 'Znuny-QuickDelete',
                             type: 'line',
                             data: github_data,
                             tension: 0.1,
                             spanGaps: true,
                             parsing: {
                                 xAxisKey: 'date',
-                                yAxisKey: 'DK4Znuny-QuickDelete',
+                                yAxisKey: 'Znuny-QuickDelete',
                             }
                         },
                         {
