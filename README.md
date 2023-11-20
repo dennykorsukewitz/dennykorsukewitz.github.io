@@ -30,11 +30,6 @@
 ![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker.png)
 ![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker-Dark.png)
 
-## VSCode-Znuny
-
-![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny.png)
-![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny-Dark.png)
-
 ## Znuny-QuickDelete
 
 ![Znuny-QuickDelete](assets/img/screenshots/Screenshot-Znuny-QuickDelete.png)
