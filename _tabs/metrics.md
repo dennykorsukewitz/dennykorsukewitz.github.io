@@ -9,7 +9,8 @@ order: 6
 
 <div>
   <canvas id="GitHubStars"></canvas>
-  <canvas id="VSCodeInstall"></canvas>
+  <canvas id="VSCodeInstalls"></canvas>
+  <canvas id="SublimeInstalls"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -25,7 +26,6 @@ order: 6
             return response.json();
         })
         .then((github_data) => {
-
             let chart = new Chart(GitHubStars, {
                 data: {
                     datasets: [
@@ -143,6 +143,7 @@ order: 6
                             time: {
                                 unit: 'year'
                             },
+                            // min: '2022-12-31 00:00:00',
                         }
                     },
                     plugins: {
@@ -159,9 +160,7 @@ order: 6
         );
     });
 
-
-
-    const VSCodeInstall = document.getElementById('VSCodeInstall');
+    const VSCodeInstalls = document.getElementById('VSCodeInstalls');
     let url_vscode = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/vscode.json';
 
     fetch(url_vscode)
@@ -170,7 +169,7 @@ order: 6
         })
         .then((vscode_data) => {
 
-            let chart = new Chart(VSCodeInstall, {
+            let chart = new Chart(VSCodeInstalls, {
                 data: {
                     datasets: [
                         {
@@ -235,13 +234,91 @@ order: 6
                             },
                         }
                     },
+
                     plugins: {
                         colors: {
                             forceOverride: true,
                         },
                         title: {
                             display: true,
-                            text: 'VSCode - Install'
+                            text: 'VSCode - Installs'
+                        },
+                    }
+                }
+            }
+        );
+    });
+
+    const SublimeInstalls = document.getElementById('SublimeInstalls');
+    let url_sublime = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/sublime.json';
+
+    fetch(url_sublime)
+        .then((response) => {
+            return response.json();
+        })
+        .then((sublime_data) => {
+            let chart = new Chart(SublimeInstalls, {
+                data: {
+                    datasets: [
+                        // {
+                        //     type: 'line',
+                        //     label: 'Sublime-AddFolderToWorkspace',
+                        //     data: sublime_data,
+                        //     borderColor: '#4f81bc',
+                        //     tension: 0.1,
+                        //     spanGaps: true,
+                        //     parsing: {
+                        //         xAxisKey: 'date',
+                        //         yAxisKey: 'Sublime-AddFolderToWorkspace',
+                        //     }
+                        // },
+                        // {
+                        //     type: 'line',
+                        //     label: 'Sublime-GitHubFileFetcher',
+                        //     data: sublime_data,
+                        //     tension: 0.1,
+                        //     spanGaps: true,
+                        //     parsing: {
+                        //         xAxisKey: 'date',
+                        //         yAxisKey: 'Sublime-GitHubFileFetcher',
+                        //     }
+                        // },
+                        {
+                            type: 'line',
+                            label: 'Sublime-QuoteWithMarker',
+                            data: sublime_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'Sublime-QuoteWithMarker',
+                            }
+                        },
+
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            min: 0,
+                        },
+                        xAxis: {
+                            stacked: true,
+                            type: 'time',
+                            time: {
+                                unit: 'month'
+                            },
+                        }
+                    },
+
+                    plugins: {
+                        colors: {
+                            forceOverride: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'Sublime - Installs'
                         },
                     }
                 }
