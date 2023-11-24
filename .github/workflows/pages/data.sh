@@ -1,6 +1,7 @@
 #!/bin/bash
 
-REPOSITORIES=($(gh search repos --owner "dennykorsukewitz" --topic "pages" --jq '.[].name' --json name | sort))
+OWNER="dennykorsukewitz"
+mapfile -t REPOSITORIES < <(gh search repos --owner "$OWNER" --topic "pages" --jq '.[].name' --json name | sort)
 
 cat /dev/null > _data/repositories.yml
 
