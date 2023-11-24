@@ -45,6 +45,11 @@
 ![Znuny-UBInventory](assets/img/screenshots/Screenshot-Znuny-UBInventory.png)
 ![Znuny-UBInventory](assets/img/screenshots/Screenshot-Znuny-UBInventory-Dark.png)
 
+## Generator-sublime-package
+
+![Generator-sublime-package](assets/img/screenshots/Screenshot-Generator-sublime-package.png)
+![Generator-sublime-package](assets/img/screenshots/Screenshot-Generator-sublime-package-Dark.png)
+
 ## Repositories
 
 ![Repositories](assets/img/screenshots/Screenshot-Repositories.png)
