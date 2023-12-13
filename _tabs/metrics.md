@@ -157,7 +157,7 @@ order: 6
                     }
                 }
             }
-        );
+        )
     });
 
     const VSCodeInstalls = document.getElementById('VSCodeInstalls');
@@ -246,7 +246,7 @@ order: 6
                     }
                 }
             }
-        );
+        )
     });
 
     const SublimeInstalls = document.getElementById('SublimeInstalls');
@@ -294,7 +294,6 @@ order: 6
                                 yAxisKey: 'Sublime-QuoteWithMarker',
                             }
                         },
-
                     ],
                 },
                 options: {
@@ -319,13 +318,12 @@ order: 6
                         title: {
                             display: true,
                             text: 'Sublime - Installs'
-                        },
+                        }
                     }
                 }
             }
-        );
+        )
     });
-
 </script>
 
 
