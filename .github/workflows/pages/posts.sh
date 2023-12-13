@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 OWNER="dennykorsukewitz"
 mapfile -t REPOSITORIES < <(gh search repos --owner "$OWNER" --topic "pages" --jq '.[].name' --json name | sort)
 
