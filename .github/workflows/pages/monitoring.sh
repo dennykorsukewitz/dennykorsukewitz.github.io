@@ -57,6 +57,7 @@ EOF
     # echo $WORKFLOWS
 
     for WORKFLOW in "${WORKFLOWS[@]}"; do
+      BRANCHE_URL="branch=$BRANCHE"
       WORKFLOW_NAME=$(echo $WORKFLOW | jq '.name' | sed 's/\"//g')
       WORKFLOW_BADGE_URL=$(echo $WORKFLOW | jq '.badge_url' | sed 's/\"//g')
 
@@ -64,8 +65,12 @@ EOF
         break
       fi
 
+      if [ "$WORKFLOW_NAME" == "Release" ];then
+        BRANCHE_URL=""
+      fi
+
       cat << EOF >> "$PAGES"/monitoring.md
-![$WORKFLOW_NAME]($WORKFLOW_BADGE_URL?branch=$BRANCHE){: .normal}
+![$WORKFLOW_NAME]($WORKFLOW_BADGE_URL?$BRANCHE_URL){: .normal}
 EOF
 
     done
