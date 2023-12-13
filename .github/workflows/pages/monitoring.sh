@@ -59,7 +59,10 @@ EOF
     for WORKFLOW in "${WORKFLOWS[@]}"; do
       BRANCHE_URL="branch=$BRANCHE"
       WORKFLOW_NAME=$(echo $WORKFLOW | jq '.name' | sed 's/\"//g')
-      WORKFLOW_BADGE_URL=$(echo $WORKFLOW | jq '.badge_url' | sed 's/\"//g')
+      WORKFLOW_URL=$(echo $WORKFLOW | jq '.badge_url' | sed 's/\"//g' | sed 's/workflows.*//g' )
+      WORKFLOW_PATH=$(echo $WORKFLOW | jq '.path' | sed 's/\"//g' | sed 's/.github\///g' )
+
+      WORKFLOW_BADGE_URL="${WORKFLOW_URL}actions/${WORKFLOW_PATH}/badge.svg"
 
       if [ -z "$WORKFLOW_NAME" ];then
         break
