@@ -24,10 +24,10 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
   echo -e "\n-----------$REPOSITORY-----------\n"
 
-  UNIQUE_VIEWS=`gh api -XGET https://api.github.com/repos/$OWNER/$REPOSITORY/traffic/views --jq .uniques`
-  TOTAL_VIEWS=`gh api -XGET https://api.github.com/repos/$OWNER/$REPOSITORY/traffic/views --jq .count`
+  UNIQUE_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .uniques)
+  TOTAL_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .count)
 
-  BRANCHES=($(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name' ))
+  mapfile -t BRANCHES < <(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name')
 
       cat << EOF >> "$PAGES"/monitoring.md
 <hr>
@@ -51,16 +51,15 @@ EOF
 <div class="post-tag btn btn-outline-primary"><a href="https://github.com/$OWNER/$REPOSITORY/actions?query=branch%3A$BRANCHE" target="_blank">$BRANCHE</a></div>
 EOF
 
-    WORKFLOWS=($(gh api -XGET /repos/$OWNER/$REPOSITORY/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g'))
+    mapfile -t WORKFLOWS < <(gh api -XGET /repos/"$OWNER"/"$REPOSITORY"/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g')
 
-    # gh api -XGET https://api.github.com/repos/$OWNER/$REPOSITORY/commits/dev/check-runs --jq '.check_runs[].name' --field 'filter=latest'
-    # echo $WORKFLOWS
+    # gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/commits/dev/check-runs --jq '.check_runs[].name' --field 'filter=latest'
 
     for WORKFLOW in "${WORKFLOWS[@]}"; do
       BRANCHE_URL="branch=$BRANCHE"
-      WORKFLOW_NAME=$(echo $WORKFLOW | jq '.name' | sed 's/\"//g')
-      WORKFLOW_URL=$(echo $WORKFLOW | jq '.badge_url' | sed 's/\"//g' | sed 's/workflows.*//g' )
-      WORKFLOW_PATH=$(echo $WORKFLOW | jq '.path' | sed 's/\"//g' | sed 's/.github\///g' )
+      WORKFLOW_NAME=$(echo "$WORKFLOW" | jq '.name' | sed 's/\"//g')
+      WORKFLOW_URL=$(echo "$WORKFLOW" | jq '.badge_url' | sed 's/\"//g' | sed 's/workflows.*//g' )
+      WORKFLOW_PATH=$(echo "$WORKFLOW" | jq '.path' | sed 's/\"//g' | sed 's/.github\///g' )
 
       WORKFLOW_BADGE_URL="${WORKFLOW_URL}actions/${WORKFLOW_PATH}/badge.svg"
 
