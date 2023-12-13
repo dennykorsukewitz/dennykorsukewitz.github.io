@@ -4,7 +4,7 @@ icon: fas fa-solid fa-chart-pie"
 order: 6
 ---
 
-> <iframe src="https://github.com/sponsors/dennykorsukewitz/button" title="Sponsor dennykorsukewitz" height="32" width="114" style="border: 1; border-radius: 6px;"></iframe>
+<iframe src="https://github.com/sponsors/dennykorsukewitz/button" title="Sponsor dennykorsukewitz" height="32" width="114" style="border: 1; border-radius: 6px;"></iframe>
 {: .prompt-tip }
 
 <div>
@@ -14,7 +14,7 @@ order: 6
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!--Line below added, added date adapter for time scale -->
+<!-- Line below added, added date adapter for time scale -->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
 <script>
@@ -143,7 +143,6 @@ order: 6
                             time: {
                                 unit: 'year'
                             },
-                            // min: '2022-12-31 00:00:00',
                         }
                     },
                     plugins: {
@@ -260,29 +259,6 @@ order: 6
             let chart = new Chart(SublimeInstalls, {
                 data: {
                     datasets: [
-                        // {
-                        //     type: 'line',
-                        //     label: 'Sublime-AddFolderToWorkspace',
-                        //     data: sublime_data,
-                        //     borderColor: '#4f81bc',
-                        //     tension: 0.1,
-                        //     spanGaps: true,
-                        //     parsing: {
-                        //         xAxisKey: 'date',
-                        //         yAxisKey: 'Sublime-AddFolderToWorkspace',
-                        //     }
-                        // },
-                        // {
-                        //     type: 'line',
-                        //     label: 'Sublime-GitHubFileFetcher',
-                        //     data: sublime_data,
-                        //     tension: 0.1,
-                        //     spanGaps: true,
-                        //     parsing: {
-                        //         xAxisKey: 'date',
-                        //         yAxisKey: 'Sublime-GitHubFileFetcher',
-                        //     }
-                        // },
                         {
                             type: 'line',
                             label: 'Sublime-QuoteWithMarker',
