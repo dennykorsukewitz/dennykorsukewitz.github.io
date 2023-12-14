@@ -270,6 +270,17 @@ order: 6
                                 yAxisKey: 'Sublime-QuoteWithMarker',
                             }
                         },
+                        {
+                            type: 'line',
+                            label: 'Sublime-GitHubFileFetcher',
+                            data: sublime_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'Sublime-GitHubFileFetcher',
+                            }
+                        },
                     ],
                 },
                 options: {
