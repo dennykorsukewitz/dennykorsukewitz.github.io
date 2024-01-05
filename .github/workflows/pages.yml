@@ -42,20 +42,23 @@ jobs:
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
+      - name: Create _data/files
+        run: pages/.github/workflows/pages/data.sh
+
       - name: Add dennykorsukewitz (GitHub Profile)
         run: pages/.github/workflows/pages/github-profile.sh
 
       - name: Add Repository List
         run: pages/.github/workflows/pages/repositories.sh
 
+      - name: Add Repository Tab
+        run: pages/.github/workflows/pages/repositories_tab.sh
+
       - name: Create release blog posts
         run: pages/.github/workflows/pages/posts.sh
 
       - name: Add Monitoring
         run: pages/.github/workflows/pages/monitoring.sh
-
-      - name: Add Repository Tab
-        run: pages/.github/workflows/pages/repositories_tab.sh
 
       - name: Setup Pages
         id: pages
