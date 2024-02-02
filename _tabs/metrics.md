@@ -216,6 +216,28 @@ order: 6
                                 yAxisKey: 'VSCode-QuoteWithMarker',
                             }
                         },
+                        {
+                            type: 'line',
+                            label: 'VSCode-RainbowColors',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-RainbowColors',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'VSCode-MyExtensionPack',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-MyExtensionPack',
+                            }
+                        },
 
                     ],
                 },
