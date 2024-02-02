@@ -30,6 +30,11 @@
 ![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker.png)
 ![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker-Dark.png)
 
+## VSCode-RainbowColors
+
+![VSCode-RainbowColors](assets/img/screenshots/Screenshot-VSCode-RainbowColors.png)
+![VSCode-RainbowColors](assets/img/screenshots/Screenshot-VSCode-RainbowColors-Dark.png)
+
 ## VSCode-Znuny
 
 ![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny.png)
