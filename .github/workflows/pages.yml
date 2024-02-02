@@ -79,8 +79,8 @@ jobs:
       # - name: Test site
       #   run: |
       #     cd "${GITHUB_WORKSPACE}/pages" && bundle exec htmlproofer _site \
-            # \-\-disable-external=true \
-            # \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+      # \-\-disable-external=true \
+      # \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
@@ -121,5 +121,5 @@ jobs:
       - name: Add and Commit
         uses: EndBug/add-and-commit@v9
         with:
-          message: 'Updated Screenshots.'
-          cwd: './pages'
+          message: "Updated Screenshots."
+          cwd: "./pages"

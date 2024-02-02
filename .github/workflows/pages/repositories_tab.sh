@@ -47,7 +47,7 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
         <div href="/posts/Znuny-Timeline/" class="card post-preview flex-md-row-reverse">
             <div class="card-body d-flex flex-column">
                 <h1 class="card-title my-2 mt-md-0">
-                  <a href="/$REPOSITORY">
+                  <a href="/$REPOSITORY/">
                     $REPOSITORY
                   </a>
                 </h1>
