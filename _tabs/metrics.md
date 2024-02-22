@@ -8,6 +8,7 @@ order: 6
 {: .prompt-tip }
 
 <div>
+  <canvas id="Last7Days"></canvas>
   <canvas id="GitHubStars"></canvas>
   <canvas id="VSCodeInstalls"></canvas>
   <canvas id="SublimeInstalls"></canvas>
@@ -18,6 +19,46 @@ order: 6
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
 <script>
+
+
+    const Last7Days = document.getElementById('Last7Days');
+    let url_last7days = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
+
+    let start = new Date(),
+    end = new Date();
+
+    start.setDate(start.getDate() - 7); // set to 'now' minus 7 days.
+    start.setHours(0, 0, 0, 0); // set to midnight.
+
+    fetch(url_last7days)
+        .then((response) => {
+            return response.json();
+        })
+        .then((last7days_data) => {
+
+            console.log(last7days_data)
+            console.log(start)
+            console.log(end)
+
+            new Chart(Last7Days, {
+                type: "line",
+                options: {
+                    responsive: true,
+                    scales: {
+                        xAxis: {
+                            type: "time",
+                            time: {
+                                min: start,
+                                max: end,
+                                unit: "day"
+                            }
+                        }
+                    }
+                }
+            }
+        )
+    });
+
     const GitHubStars = document.getElementById('GitHubStars');
     let url_github = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
 
@@ -26,7 +67,7 @@ order: 6
             return response.json();
         })
         .then((github_data) => {
-            let chart = new Chart(GitHubStars, {
+            new Chart(GitHubStars, {
                 data: {
                     datasets: [
                         {
@@ -168,7 +209,7 @@ order: 6
         })
         .then((vscode_data) => {
 
-            let chart = new Chart(VSCodeInstalls, {
+            new Chart(VSCodeInstalls, {
                 data: {
                     datasets: [
                         {
@@ -278,7 +319,7 @@ order: 6
             return response.json();
         })
         .then((sublime_data) => {
-            let chart = new Chart(SublimeInstalls, {
+            new Chart(SublimeInstalls, {
                 data: {
                     datasets: [
                         {
