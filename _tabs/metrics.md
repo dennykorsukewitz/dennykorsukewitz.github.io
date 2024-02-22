@@ -312,7 +312,7 @@ order: 6
     });
 
     const SublimeInstalls = document.getElementById('SublimeInstalls');
-    let url_sublime = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/sublime.json';
+    let url_sublime = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/sublime-total.json';
 
     fetch(url_sublime)
         .then((response) => {
