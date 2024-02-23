@@ -60,6 +60,9 @@ jobs:
       - name: Add Monitoring
         run: pages/.github/workflows/pages/monitoring.sh
 
+      - name: Add Workflows
+        run: pages/.github/workflows/pages/workflows.sh
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3

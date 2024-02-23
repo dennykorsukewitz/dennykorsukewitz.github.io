@@ -12,7 +12,7 @@ if [ -z "$GITHUB_WORKSPACE" ];then
   PAGES='.'
 fi
 
-cat << EOF > "$PAGES"/pipelines.md
+cat << EOF > "$PAGES"/workflows.md
 ---
 layout: page
 popup: false
@@ -26,7 +26,7 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
   mapfile -t BRANCHES < <(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name')
 
-      cat << EOF >> "$PAGES"/pipelines.md
+      cat << EOF >> "$PAGES"/workflows.md
 <hr>
 
 ## $REPOSITORY
@@ -36,14 +36,13 @@ EOF
   for BRANCHE in "${BRANCHES[@]}"; do
 
     echo -e "\n-----------$REPOSITORY - $BRANCHE-----------\n"
-      cat << EOF >> "$PAGES"/pipelines.md
+      cat << EOF >> "$PAGES"/workflows.md
 
 <div class="post-tag btn btn-outline-primary"><a href="https://github.com/$OWNER/$REPOSITORY/actions?query=branch%3A$BRANCHE" target="_blank">$BRANCHE</a></div>
 EOF
 
-    mapfile -t WORKFLOWS < <(gh api -XGET /repos/"$OWNER"/"$REPOSITORY"/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g')
 
-    # gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/commits/dev/check-runs --jq '.check_runs[].name' --field 'filter=latest'
+    mapfile -t WORKFLOWS < <(gh api -XGET /repos/"$OWNER"/"$REPOSITORY"/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g')
 
     for WORKFLOW in "${WORKFLOWS[@]}"; do
       BRANCHE_URL="branch=$BRANCHE"
@@ -61,7 +60,7 @@ EOF
         BRANCHE_URL=""
       fi
 
-      cat << EOF >> "$PAGES"/pipelines.md
+      cat << EOF >> "$PAGES"/workflows.md
 ![$WORKFLOW_NAME]($WORKFLOW_BADGE_URL?$BRANCHE_URL){: .normal}
 EOF
 

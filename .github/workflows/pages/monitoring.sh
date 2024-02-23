@@ -53,8 +53,6 @@ EOF
 
     mapfile -t WORKFLOWS < <(gh api -XGET /repos/"$OWNER"/"$REPOSITORY"/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g')
 
-    # gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/commits/dev/check-runs --jq '.check_runs[].name' --field 'filter=latest'
-
     for WORKFLOW in "${WORKFLOWS[@]}"; do
       BRANCHE_URL="branch=$BRANCHE"
       WORKFLOW_NAME=$(echo "$WORKFLOW" | jq '.name' | sed 's/\"//g')
