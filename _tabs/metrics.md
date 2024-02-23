@@ -121,7 +121,7 @@ order: 6
                         },
                         title: {
                             display: true,
-                            text: 'Daily Installs'
+                            text: 'Daily - Installs'
                         },
                     }
                 }
