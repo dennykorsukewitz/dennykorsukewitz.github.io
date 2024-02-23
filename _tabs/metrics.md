@@ -8,10 +8,10 @@ order: 6
 {: .prompt-tip }
 
 <div>
-  <canvas id="Last7Days"></canvas>
-  <canvas id="GitHubStars"></canvas>
+  <canvas id="Daily"></canvas>
   <canvas id="VSCodeInstalls"></canvas>
   <canvas id="SublimeInstalls"></canvas>
+  <canvas id="GitHubStars"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -20,38 +20,359 @@ order: 6
 
 <script>
 
+    const Daily = document.getElementById('Daily');
+    let url_daily = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/daily.json';
 
-    const Last7Days = document.getElementById('Last7Days');
-    let url_last7days = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
-
-    let start = new Date(),
-    end = new Date();
-
-    start.setDate(start.getDate() - 7); // set to 'now' minus 7 days.
-    start.setHours(0, 0, 0, 0); // set to midnight.
-
-    fetch(url_last7days)
+    fetch(url_daily)
         .then((response) => {
             return response.json();
         })
-        .then((last7days_data) => {
+        .then((daily_data) => {
 
-            console.log(last7days_data)
-            console.log(start)
-            console.log(end)
+            daily_data = [
 
-            new Chart(Last7Days, {
-                type: "line",
+
+  {
+    "date": "2024-02-14T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-15T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-16T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-17T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-18T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-19T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-20T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2"
+  },
+  {
+    "date": "2024-02-21T00:00:00Z",
+    "Sublime-GitHubFileFetcher": "1",
+    "Sublime-QuoteWithMarker": "1",
+    "VSCode-GitHubFileFetcher": "2",
+    "VSCode-MyExtensionPack": "1",
+    "VSCode-Znuny": "1"
+  },
+  {
+    "date": "2024-02-22T00:00:00Z",
+    'VSCode-AddFolderToWorkspace': "1",
+    'VSCode-GitHubFileFetcher': "1",
+    'VSCode-Znuny': "1",
+    'VSCode-QuoteWithMarker': "1",
+    'VSCode-RainbowColors': "1",
+    'VSCode-MyExtensionPack': "1",
+    'Sublime-QuoteWithMarker': "1",
+    'Sublime-GitHubFileFetcher': "1",
+  },
+//   {
+//     "date": "2024-02-23T00:00:00Z",
+//     'VSCode-AddFolderToWorkspace': "3",
+//     'VSCode-GitHubFileFetcher': "3",
+//     'VSCode-Znuny': "3",
+//     'VSCode-QuoteWithMarker': "3",
+//     'VSCode-RainbowColors': "3",
+//     'VSCode-MyExtensionPack': "3",
+//   }
+]
+
+
+            console.log(daily_data)
+        const daily = daily_data.slice(-7);
+            new Chart(Daily, {
+                type: "bar",
+                data: {
+                    datasets: [
+                        {
+                            label: 'VSCode-AddFolderToWorkspace',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-AddFolderToWorkspace',
+                            }
+                        },
+                        {
+                            label: 'VSCode-GitHubFileFetcher',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-GitHubFileFetcher',
+                            }
+                        },
+                        {
+                            label: 'VSCode-Znuny',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-Znuny',
+                            }
+                        },
+                        {
+                            label: 'VSCode-QuoteWithMarker',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-QuoteWithMarker',
+                            }
+                        },
+                        {
+                            label: 'VSCode-RainbowColors',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-RainbowColors',
+                            }
+                        },
+                        {
+                            label: 'VSCode-MyExtensionPack',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-MyExtensionPack',
+                            }
+                        },
+                        {
+                            label: 'Sublime-QuoteWithMarker',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'Sublime-QuoteWithMarker',
+                            }
+                        },
+                        {
+                            label: 'Sublime-GitHubFileFetcher',
+                            data: daily,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'Sublime-GitHubFileFetcher',
+                            }
+                        },
+                    ],
+                },
                 options: {
                     responsive: true,
+                    borderWidth: 1,
                     scales: {
                         xAxis: {
                             type: "time",
                             time: {
-                                min: start,
-                                max: end,
                                 unit: "day"
                             }
+                        },
+                    },
+                    scale: {
+                        ticks: {
+                            precision: 0
+                        }
+                    },
+                    plugins: {
+                        colors: {
+                            forceOverride: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'Daily Installs'
+                        },
+                    }
+                }
+            }
+        )
+    });
+
+    const VSCodeInstalls = document.getElementById('VSCodeInstalls');
+    let url_vscode = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/vscode-total.json';
+
+    fetch(url_vscode)
+        .then((response) => {
+            return response.json();
+        })
+        .then((vscode_data) => {
+
+            new Chart(VSCodeInstalls, {
+                data: {
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'VSCode-AddFolderToWorkspace',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-AddFolderToWorkspace',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'VSCode-GitHubFileFetcher',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-GitHubFileFetcher',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'VSCode-Znuny',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-Znuny',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'VSCode-QuoteWithMarker',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-QuoteWithMarker',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'VSCode-RainbowColors',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-RainbowColors',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'VSCode-MyExtensionPack',
+                            data: vscode_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'VSCode-MyExtensionPack',
+                            }
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            min: 0,
+                        },
+                        xAxis: {
+                            stacked: true,
+                            type: 'time',
+                            time: {
+                                unit: 'month'
+                            },
+                        }
+                    },
+
+                    plugins: {
+                        colors: {
+                            forceOverride: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'VSCode - Installs'
+                        },
+                    }
+                }
+            }
+        )
+    });
+
+    const SublimeInstalls = document.getElementById('SublimeInstalls');
+    let url_sublime = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/sublime-total.json';
+
+    fetch(url_sublime)
+        .then((response) => {
+            return response.json();
+        })
+        .then((sublime_data) => {
+            new Chart(SublimeInstalls, {
+                data: {
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'Sublime-QuoteWithMarker',
+                            data: sublime_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'Sublime-QuoteWithMarker',
+                            }
+                        },
+                        {
+                            type: 'line',
+                            label: 'Sublime-GitHubFileFetcher',
+                            data: sublime_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'Sublime-GitHubFileFetcher',
+                            }
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            min: 0,
+                        },
+                        xAxis: {
+                            stacked: true,
+                            type: 'time',
+                            time: {
+                                unit: 'month'
+                            },
+                        }
+                    },
+
+                    plugins: {
+                        colors: {
+                            forceOverride: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'Sublime - Installs'
                         }
                     }
                 }
@@ -59,7 +380,7 @@ order: 6
         )
     });
 
-    const GitHubStars = document.getElementById('GitHubStars');
+const GitHubStars = document.getElementById('GitHubStars');
     let url_github = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
 
     fetch(url_github)
@@ -200,180 +521,6 @@ order: 6
         )
     });
 
-    const VSCodeInstalls = document.getElementById('VSCodeInstalls');
-    let url_vscode = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/vscode.json';
-
-    fetch(url_vscode)
-        .then((response) => {
-            return response.json();
-        })
-        .then((vscode_data) => {
-
-            new Chart(VSCodeInstalls, {
-                data: {
-                    datasets: [
-                        {
-                            type: 'line',
-                            label: 'VSCode-AddFolderToWorkspace',
-                            data: vscode_data,
-                            borderColor: '#4f81bc',
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-AddFolderToWorkspace',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-GitHubFileFetcher',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-GitHubFileFetcher',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-Znuny',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-Znuny',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-QuoteWithMarker',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-QuoteWithMarker',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-RainbowColors',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-RainbowColors',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-MyExtensionPack',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-MyExtensionPack',
-                            }
-                        },
-
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            min: 0,
-                        },
-                        xAxis: {
-                            stacked: true,
-                            type: 'time',
-                            time: {
-                                unit: 'month'
-                            },
-                        }
-                    },
-
-                    plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
-                        title: {
-                            display: true,
-                            text: 'VSCode - Installs'
-                        },
-                    }
-                }
-            }
-        )
-    });
-
-    const SublimeInstalls = document.getElementById('SublimeInstalls');
-    let url_sublime = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/sublime-total.json';
-
-    fetch(url_sublime)
-        .then((response) => {
-            return response.json();
-        })
-        .then((sublime_data) => {
-            new Chart(SublimeInstalls, {
-                data: {
-                    datasets: [
-                        {
-                            type: 'line',
-                            label: 'Sublime-QuoteWithMarker',
-                            data: sublime_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Sublime-QuoteWithMarker',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'Sublime-GitHubFileFetcher',
-                            data: sublime_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Sublime-GitHubFileFetcher',
-                            }
-                        },
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            min: 0,
-                        },
-                        xAxis: {
-                            stacked: true,
-                            type: 'time',
-                            time: {
-                                unit: 'month'
-                            },
-                        }
-                    },
-
-                    plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
-                        title: {
-                            display: true,
-                            text: 'Sublime - Installs'
-                        }
-                    }
-                }
-            }
-        )
-    });
 </script>
 
 
