@@ -9,7 +9,7 @@ REPOSITORIES+=("dennykorsukewitz.github.io")
 
 PAGES='pages'
 if [ -z "$GITHUB_WORKSPACE" ];then
-  PAGES='.'
+    PAGES='.'
 fi
 
 cat << EOF > "$PAGES"/monitoring.md
@@ -22,14 +22,14 @@ EOF
 
 for REPOSITORY in "${REPOSITORIES[@]}"; do
 
-  echo -e "\n-----------$REPOSITORY-----------\n"
+    echo -e "\n-----------$REPOSITORY-----------\n"
 
-  UNIQUE_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .uniques)
-  TOTAL_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .count)
+    UNIQUE_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .uniques)
+    TOTAL_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .count)
 
-  mapfile -t BRANCHES < <(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name')
+    mapfile -t BRANCHES < <(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name')
 
-      cat << EOF >> "$PAGES"/monitoring.md
+    cat << EOF >> "$PAGES"/monitoring.md
 <hr>
 
 ## $REPOSITORY
@@ -46,7 +46,7 @@ EOF
   for BRANCHE in "${BRANCHES[@]}"; do
 
     echo -e "\n-----------$REPOSITORY - $BRANCHE-----------\n"
-      cat << EOF >> "$PAGES"/monitoring.md
+    cat << EOF >> "$PAGES"/monitoring.md
 
 <div class="post-tag btn btn-outline-primary"><a href="https://github.com/$OWNER/$REPOSITORY/actions?query=branch%3A$BRANCHE" target="_blank">$BRANCHE</a></div>
 EOF
@@ -54,22 +54,22 @@ EOF
     mapfile -t WORKFLOWS < <(gh api -XGET /repos/"$OWNER"/"$REPOSITORY"/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g')
 
     for WORKFLOW in "${WORKFLOWS[@]}"; do
-      BRANCHE_URL="branch=$BRANCHE"
-      WORKFLOW_NAME=$(echo "$WORKFLOW" | jq '.name' | sed 's/\"//g')
-      WORKFLOW_URL=$(echo "$WORKFLOW" | jq '.badge_url' | sed 's/\"//g' | sed 's/workflows.*//g' )
-      WORKFLOW_PATH=$(echo "$WORKFLOW" | jq '.path' | sed 's/\"//g' | sed 's/.github\///g' )
+        BRANCHE_URL="branch=$BRANCHE"
+        WORKFLOW_NAME=$(echo "$WORKFLOW" | jq '.name' | sed 's/\"//g')
+        WORKFLOW_URL=$(echo "$WORKFLOW" | jq '.badge_url' | sed 's/\"//g' | sed 's/workflows.*//  g' )
+        WORKFLOW_PATH=$(echo "$WORKFLOW" | jq '.path' | sed 's/\"//g' | sed 's/.github\///g' )
 
-      WORKFLOW_BADGE_URL="${WORKFLOW_URL}actions/${WORKFLOW_PATH}/badge.svg"
+        WORKFLOW_BADGE_URL="${WORKFLOW_URL}actions/${WORKFLOW_PATH}/badge.svg"
 
-      if [ -z "$WORKFLOW_NAME" ];then
-        break
-      fi
+        if [ -z "$WORKFLOW_NAME" ];then
+            break
+        fi
 
-      if [ "$WORKFLOW_NAME" == "Release" ];then
-        BRANCHE_URL=""
-      fi
+        if [ "$WORKFLOW_NAME" == "Release" ];then
+          BRANCHE_URL=""
+        fi
 
-      cat << EOF >> "$PAGES"/monitoring.md
+        cat << EOF >> "$PAGES"/monitoring.md
 ![$WORKFLOW_NAME]($WORKFLOW_BADGE_URL?$BRANCHE_URL){: .normal}
 EOF
 
