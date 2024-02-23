@@ -26,6 +26,7 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
     UNIQUE_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .uniques)
     TOTAL_VIEWS=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/traffic/views --jq .count)
+    LATEST_VERSION=$(gh api -XGET https://api.github.com/repos/"$OWNER"/"$REPOSITORY"/releases/latest --jq .tag_name)
 
     mapfile -t BRANCHES < <(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY/branches" --jq '.[].name')
 
@@ -46,10 +47,18 @@ EOF
   for BRANCHE in "${BRANCHES[@]}"; do
 
     echo -e "\n-----------$REPOSITORY - $BRANCHE-----------\n"
-    cat << EOF >> "$PAGES"/monitoring.md
 
+    COMPARE="<a href='https://github.com/$OWNER/$REPOSITORY/compare/$LATEST_VERSION...dev'><img src='https://img.shields.io/github/commits-since/$OWNER/$REPOSITORY/$LATEST_VERSION/dev'></a>"
+
+    if [ "$BRANCHE" == "dev" ];then
+        cat << EOF >> "$PAGES"/monitoring.md
+<div><div class="post-tag btn btn-outline-primary"><a href="https://github.com/$OWNER/$REPOSITORY/actions?query=branch%3A$BRANCHE" target="_blank">$BRANCHE</a></div><div style=" display: inline-block; position: relative; top: 6px;">$COMPARE</div></div>
+EOF
+    else
+        cat << EOF >> "$PAGES"/monitoring.md
 <div class="post-tag btn btn-outline-primary"><a href="https://github.com/$OWNER/$REPOSITORY/actions?query=branch%3A$BRANCHE" target="_blank">$BRANCHE</a></div>
 EOF
+    fi
 
     mapfile -t WORKFLOWS < <(gh api -XGET /repos/"$OWNER"/"$REPOSITORY"/actions/workflows --jq '.workflows[]' | sed 's/[[:space:]]//g')
 
