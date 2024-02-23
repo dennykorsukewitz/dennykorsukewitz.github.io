@@ -47,5 +47,11 @@ echo -e "\n-----------START posts-----------\n"
 echo -e "\n-----------START Monitoring-----------\n"
 /opt/homebrew/bin/bash .github/workflows/pages/monitoring.sh
 
+# ---
+# Step: Add Pipelines
+# ---
+echo -e "\n-----------START Pipelines-----------\n"
+/opt/homebrew/bin/bash .github/workflows/pages/pipelines.sh
+
 echo -e "\n-----------START jekyll-----------\n"
 # git jekyll-init-serve
