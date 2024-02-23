@@ -29,70 +29,68 @@ order: 6
         })
         .then((daily_data) => {
 
-            daily_data = [
-
-
-  {
-    "date": "2024-02-14T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-15T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-16T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-17T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-18T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-19T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-20T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2"
-  },
-  {
-    "date": "2024-02-21T00:00:00Z",
-    "Sublime-GitHubFileFetcher": "1",
-    "Sublime-QuoteWithMarker": "1",
-    "VSCode-GitHubFileFetcher": "2",
-    "VSCode-MyExtensionPack": "1",
-    "VSCode-Znuny": "1"
-  },
-  {
-    "date": "2024-02-22T00:00:00Z",
-    'VSCode-AddFolderToWorkspace': "1",
-    'VSCode-GitHubFileFetcher': "1",
-    'VSCode-Znuny': "1",
-    'VSCode-QuoteWithMarker': "1",
-    'VSCode-RainbowColors': "1",
-    'VSCode-MyExtensionPack': "1",
-    'Sublime-QuoteWithMarker': "1",
-    'Sublime-GitHubFileFetcher': "1",
-  },
+//             daily_data = [
+//   {
+//     "date": "2024-02-14T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-15T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-16T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-17T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-18T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-19T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-20T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2"
+//   },
+//   {
+//     "date": "2024-02-21T00:00:00Z",
+//     "Sublime-GitHubFileFetcher": "1",
+//     "Sublime-QuoteWithMarker": "1",
+//     "VSCode-GitHubFileFetcher": "2",
+//     "VSCode-MyExtensionPack": "1",
+//     "VSCode-Znuny": "1"
+//   },
+//   {
+//     "date": "2024-02-22T00:00:00Z",
+//     'VSCode-AddFolderToWorkspace': "1",
+//     'VSCode-GitHubFileFetcher': "1",
+//     'VSCode-Znuny': "1",
+//     'VSCode-QuoteWithMarker': "1",
+//     'VSCode-RainbowColors': "1",
+//     'VSCode-MyExtensionPack': "1",
+//     'Sublime-QuoteWithMarker': "1",
+//     'Sublime-GitHubFileFetcher': "1",
+//   },
 //   {
 //     "date": "2024-02-23T00:00:00Z",
 //     'VSCode-AddFolderToWorkspace': "3",
@@ -102,7 +100,7 @@ order: 6
 //     'VSCode-RainbowColors': "3",
 //     'VSCode-MyExtensionPack': "3",
 //   }
-]
+// ]
 
 
             console.log(daily_data)
