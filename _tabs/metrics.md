@@ -28,7 +28,7 @@ order: 6
             return response.json();
         })
         .then((daily_data) => {
-        const daily = daily_data.slice(-7);
+            const daily = daily_data.slice(-7);
             new Chart(Daily, {
                 type: "bar",
                 data: {
@@ -317,7 +317,6 @@ const GitHubStars = document.getElementById('GitHubStars');
                             type: 'line',
                             label: 'Total',
                             data: github_data,
-                            borderColor: '#4f81bc',
                             tension: 0.1,
                             parsing: {
                                 xAxisKey: 'date',
@@ -350,7 +349,6 @@ const GitHubStars = document.getElementById('GitHubStars');
                             label: 'MRBS-OTRS',
                             type: 'line',
                             data: github_data,
-                            borderColor: '#1ccc71',
                             tension: 0.1,
                             spanGaps: true,
                             parsing: {
@@ -362,7 +360,6 @@ const GitHubStars = document.getElementById('GitHubStars');
                             label: 'VSCode-AddFolderToWorkspace',
                             type: 'line',
                             data: github_data,
-                            borderColor: '#1ccc71',
                             tension: 0.1,
                             spanGaps: true,
                             parsing: {
