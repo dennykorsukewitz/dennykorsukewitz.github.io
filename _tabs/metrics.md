@@ -11,6 +11,7 @@ order: 6
   <canvas id="Daily"></canvas>
   <canvas id="VSCodeInstalls"></canvas>
   <canvas id="SublimeInstalls"></canvas>
+  <canvas id="NPMInstalls"></canvas>
   <canvas id="GitHubStars"></canvas>
 </div>
 
@@ -302,7 +303,58 @@ order: 6
         )
     });
 
-const GitHubStars = document.getElementById('GitHubStars');
+    const NPMInstalls = document.getElementById('NPMInstalls');
+    let url_npm = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/npm-total.json';
+
+    fetch(url_npm)
+        .then((response) => {
+            return response.json();
+        })
+        .then((npm_data) => {
+            new Chart(NPMInstalls, {
+                data: {
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'generator-sublime-package',
+                            data: npm_data,
+                            tension: 0.1,
+                            spanGaps: true,
+                            parsing: {
+                                xAxisKey: 'date',
+                                yAxisKey: 'generator-sublime-package',
+                            }
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            min: 0,
+                        },
+                        xAxis: {
+                            type: 'time',
+                            time: {
+                                unit: 'year'
+                            },
+                        }
+                    },
+                    plugins: {
+                        colors: {
+                            forceOverride: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'NPM - Installs'
+                        },
+                    }
+                }
+            }
+        )
+    });
+
+    const GitHubStars = document.getElementById('GitHubStars');
     let url_github = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
 
     fetch(url_github)
