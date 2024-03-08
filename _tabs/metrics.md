@@ -32,15 +32,15 @@ order: 6
 
             let datasets = [];
             let repositories = [
+                'generator-sublime-package',
+                'Sublime-GitHubFileFetcher',
+                'Sublime-QuoteWithMarker',
                 'VSCode-AddFolderToWorkspace',
                 'VSCode-GitHubFileFetcher',
-                'VSCode-Znuny',
+                'VSCode-MyExtensionPack',
                 'VSCode-QuoteWithMarker',
                 'VSCode-RainbowColors',
-                'VSCode-MyExtensionPack',
-                'Sublime-QuoteWithMarker',
-                'Sublime-GitHubFileFetcher',
-                'generator-sublime-package'
+                'VSCode-Znuny',
             ];
 
             const daily = daily_data.slice(-7);
@@ -105,10 +105,10 @@ order: 6
             let repositories = [
                 'VSCode-AddFolderToWorkspace',
                 'VSCode-GitHubFileFetcher',
-                'VSCode-Znuny',
+                'VSCode-MyExtensionPack',
                 'VSCode-QuoteWithMarker',
                 'VSCode-RainbowColors',
-                'VSCode-MyExtensionPack'
+                'VSCode-Znuny',
             ];
 
             repositories.forEach(name => {
@@ -169,8 +169,8 @@ order: 6
 
             let datasets = [];
             let repositories = [
-                'Sublime-QuoteWithMarker',
                 'Sublime-GitHubFileFetcher',
+                'Sublime-QuoteWithMarker',
             ];
 
             repositories.forEach(name => {
