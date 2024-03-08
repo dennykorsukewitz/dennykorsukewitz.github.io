@@ -29,76 +29,37 @@ order: 6
             return response.json();
         })
         .then((daily_data) => {
+
+            let datasets = [];
+            let repositories = [
+                'VSCode-AddFolderToWorkspace',
+                'VSCode-GitHubFileFetcher',
+                'VSCode-Znuny',
+                'VSCode-QuoteWithMarker',
+                'VSCode-RainbowColors',
+                'VSCode-MyExtensionPack',
+                'Sublime-QuoteWithMarker',
+                'Sublime-GitHubFileFetcher',
+                'generator-sublime-package'
+            ];
+
             const daily = daily_data.slice(-7);
+
+            repositories.forEach(name => {
+                datasets.push({
+                    label: name,
+                    data: daily,
+                    parsing: {
+                        xAxisKey: 'date',
+                        yAxisKey: name,
+                    }
+                });
+            });
+
             new Chart(Daily, {
                 type: "bar",
                 data: {
-                    datasets: [
-                        {
-                            label: 'VSCode-AddFolderToWorkspace',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-AddFolderToWorkspace',
-                            }
-                        },
-                        {
-                            label: 'VSCode-GitHubFileFetcher',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-GitHubFileFetcher',
-                            }
-                        },
-                        {
-                            label: 'VSCode-Znuny',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-Znuny',
-                            }
-                        },
-                        {
-                            label: 'VSCode-QuoteWithMarker',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-QuoteWithMarker',
-                            }
-                        },
-                        {
-                            label: 'VSCode-RainbowColors',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-RainbowColors',
-                            }
-                        },
-                        {
-                            label: 'VSCode-MyExtensionPack',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-MyExtensionPack',
-                            }
-                        },
-                        {
-                            label: 'Sublime-QuoteWithMarker',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Sublime-QuoteWithMarker',
-                            }
-                        },
-                        {
-                            label: 'Sublime-GitHubFileFetcher',
-                            data: daily,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Sublime-GitHubFileFetcher',
-                            }
-                        },
-                    ],
+                    datasets: datasets,
                 },
                 options: {
                     responsive: true,
@@ -133,82 +94,40 @@ order: 6
     const VSCodeInstalls = document.getElementById('VSCodeInstalls');
     let url_vscode = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/vscode-total.json';
 
+
     fetch(url_vscode)
         .then((response) => {
             return response.json();
         })
         .then((vscode_data) => {
 
+            let datasets = [];
+            let repositories = [
+                'VSCode-AddFolderToWorkspace',
+                'VSCode-GitHubFileFetcher',
+                'VSCode-Znuny',
+                'VSCode-QuoteWithMarker',
+                'VSCode-RainbowColors',
+                'VSCode-MyExtensionPack'
+            ];
+
+            repositories.forEach(name => {
+                datasets.push({
+                    type: 'line',
+                    label: name,
+                    data: vscode_data,
+                    tension: 0.1,
+                    spanGaps: true,
+                    parsing: {
+                        xAxisKey: 'date',
+                        yAxisKey: name,
+                    }
+                });
+            });
+
             new Chart(VSCodeInstalls, {
                 data: {
-                    datasets: [
-                        {
-                            type: 'line',
-                            label: 'VSCode-AddFolderToWorkspace',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-AddFolderToWorkspace',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-GitHubFileFetcher',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-GitHubFileFetcher',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-Znuny',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-Znuny',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-QuoteWithMarker',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-QuoteWithMarker',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-RainbowColors',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-RainbowColors',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'VSCode-MyExtensionPack',
-                            data: vscode_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-MyExtensionPack',
-                            }
-                        },
-                    ],
+                    datasets: datasets,
                 },
                 options: {
                     responsive: true,
@@ -247,32 +166,30 @@ order: 6
             return response.json();
         })
         .then((sublime_data) => {
+
+            let datasets = [];
+            let repositories = [
+                'Sublime-QuoteWithMarker',
+                'Sublime-GitHubFileFetcher',
+            ];
+
+            repositories.forEach(name => {
+                datasets.push({
+                    type: 'line',
+                    label: name,
+                    data: sublime_data,
+                    tension: 0.1,
+                    spanGaps: true,
+                    parsing: {
+                        xAxisKey: 'date',
+                        yAxisKey: name,
+                    }
+                });
+            });
+
             new Chart(SublimeInstalls, {
                 data: {
-                    datasets: [
-                        {
-                            type: 'line',
-                            label: 'Sublime-QuoteWithMarker',
-                            data: sublime_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Sublime-QuoteWithMarker',
-                            }
-                        },
-                        {
-                            type: 'line',
-                            label: 'Sublime-GitHubFileFetcher',
-                            data: sublime_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Sublime-GitHubFileFetcher',
-                            }
-                        },
-                    ],
+                    datasets: datasets,
                 },
                 options: {
                     responsive: true,
@@ -311,21 +228,28 @@ order: 6
             return response.json();
         })
         .then((npm_data) => {
+            let datasets = [];
+            let repositories = [
+                'generator-sublime-package',
+            ];
+
+            repositories.forEach(name => {
+                datasets.push({
+                    type: 'line',
+                    label: name,
+                    data: npm_data,
+                    tension: 0.1,
+                    spanGaps: true,
+                    parsing: {
+                        xAxisKey: 'date',
+                        yAxisKey: name,
+                    }
+                });
+            });
+
             new Chart(NPMInstalls, {
                 data: {
-                    datasets: [
-                        {
-                            type: 'line',
-                            label: 'generator-sublime-package',
-                            data: npm_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'generator-sublime-package',
-                            }
-                        },
-                    ],
+                    datasets: datasets,
                 },
                 options: {
                     responsive: true,
