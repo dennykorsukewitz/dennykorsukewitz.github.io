@@ -289,16 +289,16 @@ order: 6
             new Chart(GitHubStars, {
                 data: {
                     datasets: [
-                        {
-                            type: 'line',
-                            label: 'Total',
-                            data: github_data,
-                            tension: 0.1,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'total',
-                            }
-                        },
+                        // {
+                        //     type: 'line',
+                        //     label: 'Total',
+                        //     data: github_data,
+                        //     tension: 0.1,
+                        //     parsing: {
+                        //         xAxisKey: 'date',
+                        //         yAxisKey: 'total',
+                        //     }
+                        // },
                         {
                             label: 'Znuny-UBInventory',
                             type: 'line',
