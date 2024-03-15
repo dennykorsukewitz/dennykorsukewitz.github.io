@@ -286,108 +286,35 @@ order: 6
             return response.json();
         })
         .then((github_data) => {
+
+            // Map each object to an array of its keys, excluding "date", "user", and "total"
+            let repositories = github_data.map(obj => {
+            return Object.keys(obj).filter(key => key !== "date" && key !== "user" && key !== "total");
+            });
+
+            let flatRepositories = repositories.flat().sort();
+
+            // Remove duplicates
+            repositories = [...new Set(flatRepositories)];
+
+            let datasets = [];
+            repositories.forEach(name => {
+                datasets.push({
+                    label: name,
+                    type: 'line',
+                    data: github_data,
+                    tension: 0.1,
+                    spanGaps: true,
+                    parsing: {
+                        xAxisKey: 'date',
+                        yAxisKey: name,
+                    }
+                });
+            });
+
             new Chart(GitHubStars, {
                 data: {
-                    datasets: [
-                        // {
-                        //     type: 'line',
-                        //     label: 'Total',
-                        //     data: github_data,
-                        //     tension: 0.1,
-                        //     parsing: {
-                        //         xAxisKey: 'date',
-                        //         yAxisKey: 'total',
-                        //     }
-                        // },
-                        {
-                            label: 'Znuny-UBInventory',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Znuny-UBInventory',
-                            }
-                        },
-                        {
-                            label: 'Znuny-QuickDelete',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'Znuny-QuickDelete',
-                            }
-                        },
-                        {
-                            label: 'MRBS-OTRS',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'MRBS-OTRS',
-                            }
-                        },
-                        {
-                            label: 'VSCode-AddFolderToWorkspace',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-AddFolderToWorkspace',
-                            }
-                        },
-                        {
-                            label: 'VSCode-GitHubFileFetcher',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-GitHubFileFetcher',
-                            }
-                        },
-                        {
-                            label: 'VSCode-Znuny',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'VSCode-Znuny',
-                            }
-                        },
-                        {
-                            label: 'dennykorsukewitz',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'dennykorsukewitz',
-                            }
-                        },
-                        {
-                            label: 'dennykorsukewitz.github.io',
-                            type: 'line',
-                            data: github_data,
-                            tension: 0.1,
-                            spanGaps: true,
-                            parsing: {
-                                xAxisKey: 'date',
-                                yAxisKey: 'dennykorsukewitz.github.io',
-                            }
-                        },
-                    ],
+                    datasets: datasets,
                 },
                 options: {
                     responsive: true,
