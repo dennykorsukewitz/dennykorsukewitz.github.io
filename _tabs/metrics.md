@@ -287,14 +287,12 @@ order: 6
         })
         .then((github_data) => {
 
-            // Map each object to an array of its keys, excluding "date", "user", and "total"
             let repositories = github_data.map(obj => {
             return Object.keys(obj).filter(key => key !== "date" && key !== "user" && key !== "total");
             });
 
             let flatRepositories = repositories.flat().sort();
 
-            // Remove duplicates
             repositories = [...new Set(flatRepositories)];
 
             let datasets = [];
