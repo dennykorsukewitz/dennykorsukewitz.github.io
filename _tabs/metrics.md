@@ -4,8 +4,18 @@ icon: fas fa-solid fa-chart-pie"
 order: 6
 ---
 
-<iframe src="https://github.com/sponsors/dennykorsukewitz/button" title="Sponsor dennykorsukewitz" height="32" width="114" style="border: 1; border-radius: 6px;"></iframe>
-{: .prompt-tip }
+<div class="donation d-flex mb-0">
+    <div class="left">
+    <iframe src="https://github.com/sponsors/dennykorsukewitz/button" title="Sponsor dennykorsukewitz" height="32" width="114" style="border: 1; border-radius: 6px;"></iframe>
+    </div>
+    <div class="right">
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="GETTPE8W8AF4A" />
+            <input type="image" src="https://pics.paypal.com/00/s/NGJjOTAwOTEtNjExYS00MzQ5LWI2MDQtZmM0YWNlY2YyOTUy/file.PNG" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="height: 32px;" />
+            <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </div>
+</div>
 
 <div>
   <canvas id="Daily"></canvas>
