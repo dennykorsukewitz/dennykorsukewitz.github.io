@@ -19,8 +19,8 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
   for MARKDOWN_FILE in "${MARKDOWN_FILES[@]}"; do
 
-    echo -e "\n-----------MARKDOWN_FILE-----------\n"
-    echo "$MARKDOWN_FILE"
+    # echo -e "\n-----------MARKDOWN_FILE-----------\n"
+    # echo "$MARKDOWN_FILE"
 
     FILE_PATH="$MARKDOWN_FILE"
     FILE_NAME="$(basename $FILE_PATH)"
@@ -44,8 +44,8 @@ toc: true
       sed -i 's/.md)/)/g' "$FILE_PATH"
     fi
 
-    echo -e "\n-----------FILE-----------\n"
-    cat "$FILE_PATH"
+    # echo -e "\n-----------FILE-----------\n"
+    # cat "$FILE_PATH"
   done
 
   mv "$PAGES"/"$REPOSITORY"/README.md "$PAGES"/"$REPOSITORY"/index.md
