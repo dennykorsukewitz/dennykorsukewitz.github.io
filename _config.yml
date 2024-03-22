@@ -94,10 +94,14 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: dennykorsukewitz/dennykorsukewitz
-    repo_id: MDEwOlJlcG9zaXRvcnkzMTc5ODkxNzc
+    # repo: dennykorsukewitz/dennykorsukewitz
+    # repo_id: MDEwOlJlcG9zaXRvcnkzMTc5ODkxNzc
+    # category: Pages
+    # category_id: DIC_kwDOEvQhOc4CeK06
+    repo: dennykorsukewitz/dennykorsukewitz.github.io
+    repo_id: R_kgDOI9EIcg
     category: Pages
-    category_id: DIC_kwDOEvQhOc4CeK06
+    category_id: DIC_kwDOI9EIcs4CeK1B
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
