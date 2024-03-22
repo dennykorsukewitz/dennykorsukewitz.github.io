@@ -4,7 +4,7 @@ date: 2024-03-22
 last_modified_at: 2024-03-22
 author: dennykorsukewitz
 categories: [Development, GitHub]
-tags: ["znuny"]
+tags: ["GitHub"]
 toc: true
 mermaid: true
 pin: true
