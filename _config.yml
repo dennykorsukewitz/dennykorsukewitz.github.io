@@ -95,7 +95,7 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: dennykorsukewitz/dennykorsukewitz.github.io
-    repo_id:
+    repo_id: R_kgDOI9EIcg
     category:
     category_id:
     mapping: # optional, default to 'pathname'
