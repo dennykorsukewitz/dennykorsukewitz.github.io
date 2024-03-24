@@ -16,22 +16,23 @@ The [`workflow.yml`](https://github.com/dennykorsukewitz/dennykorsukewitz/blob/d
 
 ```mermaid
 graph TD
-    A[Start] --> B{Function?}
-    B -->|run| R[Job: Run]
-    B -->|List all| C[Job: List_All]
-    B -->|List failed| D[Job: List_Failed]
-    B -->|Delete all| E[Job: Delete_All]
-    B -->|Delete failed| F[Job: Delete_Failed]
-    R -->|Trigger Workflow| R1[Workflow Triggered]
-    C -->|Retrieve all Workflows| C1[Print all Workflows]
-    D -->|Retrieve Failed Workflows| D1[Print Failed Workflows]
-    E -->|Retrieve all Workflows| E1[Delete all Workflows]
-    F -->|Retrieve Failed Workflows| F1[Delete Failed Workflows]
-    R1 --> G[End]
-    C1 --> G
-    D1 --> G
-    E1 --> G
-    F1 --> G
+    A[Start] --> B[Job: Get_Workflow_IDs]
+    B --> C{Function?}
+    C -->|run| R[Job: Run]
+    C -->|list all| LA[Job: List_All]
+    C -->|list failed| LF[Job: List_Failed]
+    C -->|delete all| DA[Job: Delete_All]
+    C -->|delete failed| DF[Job: Delete_Failed]
+    R -->|Retrieve all Workflows| R1[Trigger Workflow]
+    LA -->|Retrieve all Workflows| LA1[Print all Workflows Runs]
+    LF -->|Retrieve failed Workflows| LF1[Print failed Workflow Runs]
+    DA -->|Retrieve all Workflows| DA1[Delete all Workflows Runs]
+    DF -->|Retrieve failed Workflows| DF1[Delete failed Workflows Runs]
+    R1 --> End[End]
+    LA1 --> End
+    LF1 --> End
+    DA1 --> End
+    DF1 --> End
 ```
 
 > The graphic may differ from the current workflow.
@@ -52,29 +53,36 @@ This workflow is triggered manually using the `workflow_dispatch` event. It acce
 - `FUNCTION`: Determines the function to perform. Options include "run", "list all", "list failed", "delete all", and "delete failed".
 - `OWNER`: The owner of the repository.
 - `REPOSITORY`: The repository where the workflows are located.
-- `WORKFLOW_NAME`: The specific workflow to operate on. If not specified, all workflows will be used.
+- `WORKFLOW`: The specific workflow to operate on. If not specified, all workflows will be used.
 
 ## Jobs
 
-The workflow consists of four jobs: `Run`, `List_All`, `List_Failed`, `Delete_All`, and `Delete_Failed`. Each job runs on an Ubuntu 22.04 runner and uses a Personal Access Token (PAT) stored in the `GITHUB_TOKEN` secret.
+The workflow consists of six jobs: `Get_Workflow_IDs`, `Run`, `List_All`, `List_Failed`, `Delete_All`, and `Delete_Failed`.
 
-### Run Job
+A Personal Access Token (PAT) is only required for the `Delete_All` job. For all others, the normal GITHUB_TOKEN, which is stored in the `GITHUB_TOKEN` secret, is sufficient.
+
+### Get_Workflow_IDs - Job
+
+The `Get_Workflow_IDs` job in your GitHub Actions workflow is designed to retrieve the IDs of workflows in a specific GitHub repository.
+It has an output named `WORKFLOW_IDS`. This output can be used by other jobs in the workflow.
+
+### Run - Job
 
 This job runs the specified workflow(s). It runs if the `FUNCTION` input is "run". It uses the GitHub API to trigger the workflow(s).
 
-### List_All Job
+### List_All - Job
 
 This job lists all workflow runs. It runs if the `FUNCTION` input is "list all". It uses the GitHub API to retrieve the workflow runs and prints their IDs to the console.
 
-### List_Failed Job
+### List_Failed - Job
 
 This job lists all failed workflow runs. It runs if the `FUNCTION` input is "list failed". It uses the GitHub API to retrieve the workflow runs and filters them to only include those with a conclusion of "failure".
 
-### Delete_All Job
+### Delete_All - Job
 
-This job deletes all workflow runs. It runs if the `FUNCTION` input is "delete all". It retrieves the workflow runs using the GitHub API, then deletes each one.
+This job deletes all workflow runs. It runs if the `FUNCTION` input is "delete all". It retrieves the workflow runs using the GitHub API and filters them to only include those with a valid conclusion "!= null" and then deletes each one.
 
-### Delete_Failed Job
+### Delete_Failed - Job
 
 This job deletes all failed workflow runs. It runs if the `FUNCTION` input is "delete failed". It retrieves the workflow runs, filters for those with a conclusion of "failure", and then deletes each one.
 

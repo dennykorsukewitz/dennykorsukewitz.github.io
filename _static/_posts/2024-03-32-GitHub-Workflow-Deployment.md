@@ -4,7 +4,7 @@ date: 2024-03-22
 last_modified_at: 2024-03-22
 author: dennykorsukewitz
 categories: [Development, GitHub]
-tags: ["GitHub"]
+tags: ["znuny"]
 toc: true
 mermaid: true
 pin: true
@@ -16,19 +16,20 @@ The [`deployment.yml`](https://github.com/dennykorsukewitz/dennykorsukewitz/blob
 
 ```mermaid
 graph TD
-    A[Start] --> B{Function?}
-    B -->|List all| C[Job: List_All]
-    B -->|List failed| D[Job: List_Failed]
-    B -->|Delete all| E[Job: Delete_All]
-    B -->|Delete failed| F[Job: Delete_Failed]
-    C -->|Retrieve all Deployments| C1[Print all Deployments]
-    D -->|Retrieve failed Deployments| D1[Print failed Deployments]
-    E -->|Retrieve all Deployments| E1[Delete all Deployments]
-    F -->|Retrieve failed Deployments| F1[Delete failed Deployments]
-    C1 --> G[End]
-    D1 --> G
-    E1 --> G
-    F1 --> G
+    A[Start] --> B[Job: Get_Deployment_IDs]
+    B --> C{Function?}
+    C -->|list all| LA[Job: List_All]
+    C -->|list failed| LF[Job: List_Failed]
+    C -->|delete all| DA[Job: Delete_All]
+    C -->|delete failed| DF[Job: Delete_Failed]
+    LA -->|Retrieve all Deployments| LA1[Print all Deployments ]
+    LF -->|Retrieve failed Deployments| LF1[Print failed Deployments ]
+    DA -->|Retrieve all Deployments| DA1[Delete all Deployments]
+    DF -->|Retrieve failed Deployments| DF1[Delete failed Deployments]
+    LA1 --> G[End]
+    LF1 --> G
+    DA1 --> G
+    DF1 --> G
 ```
 
 > The graphic may differ from the current workflow.
@@ -53,21 +54,27 @@ This workflow is triggered manually using the `workflow_dispatch` event. It acce
 
 ## Jobs
 
-The workflow consists of four jobs: `List_All`, `List_Failed`, `Delete_All`, and `Delete_Failed`. Each job runs on an Ubuntu 22.04 runner and uses a Personal Access Token (PAT) stored in the `GITHUB_TOKEN` secret.
+The workflow consists of five jobs: `Get_Deployment_IDs`, `List_All`, `List_Failed`, `Delete_All`, and `Delete_Failed`.
 
-### List_All Job
+A Personal Access Token (PAT) is only required for the `Delete_All` job. For all others, the normal GITHUB_TOKEN, which is stored in the `GITHUB_TOKEN` secret, is sufficient.
+
+### Get_Deployment_IDs - Job
+
+The `Get_Deployment_IDs` job is designed to retrieve the IDs of deployments in a specific GitHub repository. It has an output named `DEPLOYMENT_IDS`. This output can be used by other jobs in the workflow.
+
+### List_All - Job
 
 This job lists all deployments. It runs if the `FUNCTION` input is "list all". It uses the GitHub CLI (`gh`) to call the GitHub API and retrieve the deployments. The deployments are then printed to the console.
 
-### List_Failed Job
+### List_Failed - Job
 
 This job lists all failed deployments. It runs if the `FUNCTION` input is "list failed". Like the `List_All` job, it uses the GitHub CLI to call the GitHub API. However, it filters the deployments to only include those with a status of "failure".
 
-### Delete_All Job
+### Delete_All - Job
 
 This job deletes all deployments. It runs if the `FUNCTION` input is "delete all". It retrieves the deployments using the GitHub API, then deletes each one using a DELETE request.
 
-### Delete_Failed Job
+### Delete_Failed - Job
 
 This job deletes all failed and inactive deployments. It runs if the `FUNCTION` input is "delete failed". It retrieves the deployments, filters for those with a status of "failure" or "inactive", and then deletes each one.
 
