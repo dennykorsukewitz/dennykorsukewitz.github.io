@@ -1,7 +1,7 @@
 ---
 title: Mastering Workflow Management with GitHub Actions
 date: 2024-03-22
-last_modified_at: 2024-03-22
+last_modified_at: 2024-03-26
 author: dennykorsukewitz
 categories: [Development, GitHub]
 tags: ["GitHub"]

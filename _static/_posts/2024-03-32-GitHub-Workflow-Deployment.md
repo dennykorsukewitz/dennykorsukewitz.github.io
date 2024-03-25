@@ -1,7 +1,7 @@
 ---
 title: Mastering Deployment Management with GitHub Actions
 date: 2024-03-22
-last_modified_at: 2024-03-22
+last_modified_at: 2024-03-26
 author: dennykorsukewitz
 categories: [Development, GitHub]
 tags: ["znuny"]
@@ -26,10 +26,10 @@ graph TD
     LF -->|Retrieve failed Deployments| LF1[Print failed Deployments ]
     DA -->|Retrieve all Deployments| DA1[Delete all Deployments]
     DF -->|Retrieve failed Deployments| DF1[Delete failed Deployments]
-    LA1 --> G[End]
-    LF1 --> G
-    DA1 --> G
-    DF1 --> G
+    LA1 --> End[End]
+    LF1 --> End
+    DA1 --> End
+    DF1 --> End
 ```
 
 > The graphic may differ from the current workflow.
@@ -56,7 +56,7 @@ This workflow is triggered manually using the `workflow_dispatch` event. It acce
 
 The workflow consists of five jobs: `Get_Deployment_IDs`, `List_All`, `List_Failed`, `Delete_All`, and `Delete_Failed`.
 
-A Personal Access Token (PAT) is only required for the `Delete_All` job. For all others, the normal GITHUB_TOKEN, which is stored in the `GITHUB_TOKEN` secret, is sufficient.
+A Personal Access Token (PAT) is only required for the `Delete_All` and `Delete_Failed` job. For all others, the normal GITHUB_TOKEN, which is stored in the `GITHUB_TOKEN` secret, is sufficient.
 
 ### Get_Deployment_IDs - Job
 
@@ -68,7 +68,7 @@ This job lists all deployments. It runs if the `FUNCTION` input is "list all". I
 
 ### List_Failed - Job
 
-This job lists all failed deployments. It runs if the `FUNCTION` input is "list failed". Like the `List_All` job, it uses the GitHub CLI to call the GitHub API. However, it filters the deployments to only include those with a status of "failure".
+This job lists all failed deployments. It runs if the `FUNCTION` input is "list failed". Like the `List_All` job, it uses the GitHub CLI to call the GitHub API. However, it filters the deployments to only include those with a status of "failure", "inactive" or "error".
 
 ### Delete_All - Job
 
@@ -76,7 +76,7 @@ This job deletes all deployments. It runs if the `FUNCTION` input is "delete all
 
 ### Delete_Failed - Job
 
-This job deletes all failed and inactive deployments. It runs if the `FUNCTION` input is "delete failed". It retrieves the deployments, filters for those with a status of "failure" or "inactive", and then deletes each one.
+This job deletes all failed and inactive deployments. It runs if the `FUNCTION` input is "delete failed". It retrieves the deployments, filters for those with a status of "failure", "inactive" or "error", and then deletes each one.
 
 ## Conclusion
 
