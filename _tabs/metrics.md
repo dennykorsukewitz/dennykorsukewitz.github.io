@@ -23,6 +23,7 @@ order: 6
   <canvas id="SublimeInstalls"></canvas>
   <canvas id="NPMInstalls"></canvas>
   <canvas id="GitHubStars"></canvas>
+  <canvas id="GitHubStarsPie"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -289,6 +290,7 @@ order: 6
     });
 
     const GitHubStars = document.getElementById('GitHubStars');
+    const GitHubStarsPie = document.getElementById('GitHubStarsPie');
     let url_github = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/github-stars.json';
 
     fetch(url_github)
@@ -347,6 +349,42 @@ order: 6
                         },
                     }
                 }
+            });
+
+            let highestValues = {};
+
+            github_data.forEach(item => {
+                for (let key in item) {
+                    if (key !== 'date' && key !== 'user' && key !== 'total') {
+                        if (!highestValues[key] || parseInt(item[key]) > parseInt(highestValues[key])) {
+                            highestValues[key] = item[key];
+
+                        }
+                    }
+                }
+            });
+
+            let data = [];
+            let labels = [];
+            Object.keys(highestValues).forEach(name => {
+                labels.push(name);
+                data.push(highestValues[name]);
+            });
+
+            new Chart(GitHubStarsPie, {
+                type: 'polarArea',
+                // type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Stars',
+                            // cutout: '0%',
+                            data: data,
+                            hoverOffset: 4
+                        }
+                    ]
+                },
             }
         )
     });
