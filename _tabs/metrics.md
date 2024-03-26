@@ -373,13 +373,11 @@ order: 6
 
             new Chart(GitHubStarsPie, {
                 type: 'polarArea',
-                // type: 'doughnut',
                 data: {
                     labels: labels,
                     datasets: [
                         {
                             label: 'Stars',
-                            // cutout: '0%',
                             data: data,
                             hoverOffset: 4
                         }
