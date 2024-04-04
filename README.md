@@ -5,6 +5,11 @@
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS.png)
 ![MRBS-OTRS](assets/img/screenshots/Screenshot-MRBS-OTRS-Dark.png)
 
+## Sublime-AddFolderToProject
+
+![Sublime-AddFolderToProject](assets/img/screenshots/Screenshot-Sublime-AddFolderToProject.png)
+![Sublime-AddFolderToProject](assets/img/screenshots/Screenshot-Sublime-AddFolderToProject-Dark.png)
+
 ## Sublime-GitHubFileFetcher
 
 ![Sublime-GitHubFileFetcher](assets/img/screenshots/Screenshot-Sublime-GitHubFileFetcher.png)
