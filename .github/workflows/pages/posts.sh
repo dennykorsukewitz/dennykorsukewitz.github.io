@@ -13,7 +13,7 @@ cp "$PAGES"/_static/_posts/* "$PAGES"/_posts/
 
 for REPOSITORY in "${REPOSITORIES[@]}"; do
 
-  RELEASES=($(gh release list --repo "$OWNER"/"$REPOSITORY" | awk '{print $1}'))
+  mapfile -t RELEASES < <(gh release list --repo "$OWNER"/"$REPOSITORY" | awk '{print $1}')
 
   read TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
 
