@@ -1,0 +1,26 @@
+<!-- dennykorsukewitz.github.io start -->
+<script>
+  document.addEventListener('DOMContentLoaded', function (event) {
+    let hoverTimer;
+
+    document.querySelector('#avatar > img').addEventListener('mouseover', function() {
+      hoverTimer = setTimeout(function() {
+        // Replace with the path to your other avatar
+        this.src = '/assets/img/dk.png';
+        document.querySelector('#sidebar > header > h1 > a').textContent = 'Hey, what are you doing?';
+        document.querySelector('#sidebar > header > p').textContent = 'Go somewhere else with your cursor!';
+
+      }.bind(this), 2000); // 2000 milliseconds = 2 seconds
+    });
+
+    document.querySelector('#avatar > img').addEventListener('mouseout', function() {
+      clearTimeout(hoverTimer);
+      // Replace with the path to the original avatar
+      this.src = '/assets/img/avatar.png';
+      document.querySelector('#sidebar > header > h1 > a').textContent = 'Denny Korsukéwitz';
+      document.querySelector('#sidebar > header > p').textContent = 'DK 4 OpenSource';
+
+    });
+  });
+</script>
+<!-- dennykorsukewitz.github.io end -->
