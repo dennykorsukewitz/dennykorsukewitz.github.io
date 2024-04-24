@@ -15,24 +15,23 @@ for REPOSITORY in "${REPOSITORIES[@]}"; do
 
   mapfile -t RELEASES < <(gh release list --repo "$OWNER"/"$REPOSITORY" | awk '{print $1}')
 
-  read TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
+  read -r TOPICS  < <(echo $(gh api -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$OWNER/$REPOSITORY" | jq -r '.topics'))
 
-  TOPICS=$(echo "$TOPICS" | sed 's/\"pages\", //g')
+  TOPICS=$(echo "$TOPICS" | sed 's/"pages", //g')
   # echo "TOPICS"
   # echo "$TOPICS"
 
   for RELEASE in "${RELEASES[@]}"; do
     echo -e "\n-----------$REPOSITORY - $RELEASE-----------\n"
 
-    read RELEASE_NAME RELEASE_TAG RELEASE_DATE RELEASE_URL RELEASE_TAR_URL RELEASE_ZIP_URL < <(echo $(gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json name --json tagName --json publishedAt --json url --json tarballUrl --json zipballUrl --json body | jq -r '.name, .tagName, .publishedAt, .url, .tarballUrl, .zipballUrl'))
+    read -r RELEASE_NAME RELEASE_TAG RELEASE_DATE RELEASE_URL RELEASE_TAR_URL RELEASE_ZIP_URL < <(echo $(gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json name --json tagName --json publishedAt --json url --json tarballUrl --json zipballUrl --json body | jq -r '.name, .tagName, .publishedAt, .url, .tarballUrl, .zipballUrl'))
 
     # gh release view "1.2.0" -R dennykorsukewitz/VSCode-Znuny --json body --jq .body
-    RELEASE_BODY=`gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json body --jq .body`
-
+    RELEASE_BODY=$(gh release view $RELEASE --repo "$OWNER"/"$REPOSITORY" --json body --jq .body)
     RELEASE_DATE=$(echo "$RELEASE_DATE" | sed -Ee "s|(T.*)||")
 
     PIN='false'
-    LAST_MODIFIED_AT=''
+    LAST_MODIFIED_AT="release_date: $RELEASE_DATE"
     if [ "${RELEASES[0]}" == "$RELEASE" ]; then
       PIN='true'
 
@@ -61,6 +60,7 @@ categories: [DK4, $REPOSITORY]
 tags: $TOPICS
 toc: true
 pin: $PIN
+$LAST_MODIFIED_AT
 ---
 
 # $RELEASE_NAME
@@ -78,4 +78,4 @@ EOF
   done
 
 echo -e "\n-----------List all posts-----------\n"
-ls -lA "$PAGES"/_posts/ | awk -F':[0-9]* ' '/:/{print $2}'
+find "$PAGES"/_posts/ -maxdepth 1 -type f -exec basename {} \;
