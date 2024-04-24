@@ -18,7 +18,9 @@ layout: compress
 {% if layout.tail_includes %}
   {% assign has_tail = true %}
 {% endif %}
-
+<!-- dennykorsukewitz.github.io start -->
+{% include_cached avatar.html lang=lang %}
+<!-- dennykorsukewitz.github.io end -->
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="{{ site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
