@@ -180,6 +180,7 @@ order: 6
 
             let datasets = [];
             let repositories = [
+                'Sublime-AddFolderToProject',
                 'Sublime-GitHubFileFetcher',
                 'Sublime-QuoteWithMarker',
             ];
