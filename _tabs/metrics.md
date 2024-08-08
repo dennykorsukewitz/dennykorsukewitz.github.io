@@ -44,7 +44,7 @@ order: 6
             let datasets = [];
             let repositories = [
                 'generator-sublime-package',
-                'Sublime-AddFolderToProject'
+                'Sublime-AddFolderToProject',
                 'Sublime-GitHubFileFetcher',
                 'Sublime-QuoteWithMarker',
                 'VSCode-AddFolderToWorkspace',
