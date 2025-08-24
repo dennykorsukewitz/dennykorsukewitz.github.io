@@ -32,6 +32,24 @@ order: 6
 
 <script>
 
+    // Farbpalette für Repositories
+    const repositoryColors = {
+        'generator-sublime-package': '#FF6B6B',
+        'Sublime-AddFolderToProject': '#4ECDC4',
+        'Sublime-GitHubFileFetcher': '#45B7D1',
+        'Sublime-QuoteWithMarker': '#96CEB4',
+        'VSCode-AddFolderToWorkspace': '#FFEAA7',
+        'VSCode-GitHubFileFetcher': '#DDA0DD',
+        'VSCode-MyExtensionPack': '#98D8C8',
+        'VSCode-QuoteWithMarker': '#F7DC6F',
+        'VSCode-RainbowColors': '#BB8FCE',
+        'VSCode-Znuny': '#85C1E9',
+        'Znuny-QuickDelete': '#F8C471',
+        'Znuny-UBInventory': '#82E0AA',
+        'MRBS-OTRS': '#F1948A',
+        'dennykorsukewitz': '#85C1E9'
+    };
+
     const Daily = document.getElementById('Daily');
     let url_daily = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/daily.json';
 
@@ -61,6 +79,8 @@ order: 6
                 datasets.push({
                     label: name,
                     data: daily,
+                    backgroundColor: repositoryColors[name] || '#CCCCCC',
+                    borderColor: repositoryColors[name] || '#CCCCCC',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -130,6 +150,8 @@ order: 6
                     data: vscode_data,
                     tension: 0.1,
                     spanGaps: true,
+                    borderColor: repositoryColors[name] || '#CCCCCC',
+                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -193,6 +215,8 @@ order: 6
                     data: sublime_data,
                     tension: 0.1,
                     spanGaps: true,
+                    borderColor: repositoryColors[name] || '#CCCCCC',
+                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -253,6 +277,8 @@ order: 6
                     data: npm_data,
                     tension: 0.1,
                     spanGaps: true,
+                    borderColor: repositoryColors[name] || '#CCCCCC',
+                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -317,6 +343,8 @@ order: 6
                     data: github_data,
                     tension: 0.1,
                     spanGaps: true,
+                    borderColor: repositoryColors[name] || '#CCCCCC',
+                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -373,6 +401,9 @@ order: 6
                 data.push(highestValues[name]);
             });
 
+            // Farben für das Pie Chart
+            let pieColors = labels.map(name => repositoryColors[name] || '#CCCCCC');
+
             new Chart(GitHubStarsPie, {
                 type: 'polarArea',
                 data: {
@@ -381,6 +412,8 @@ order: 6
                         {
                             label: 'Stars',
                             data: data,
+                            backgroundColor: pieColors,
+                            borderColor: pieColors,
                             hoverOffset: 4
                         }
                     ]
