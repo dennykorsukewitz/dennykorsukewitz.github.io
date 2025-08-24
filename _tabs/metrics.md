@@ -32,7 +32,6 @@ order: 6
 
 <script>
 
-    // Farbpalette für Repositories
     const repositoryColors = {
         'generator-sublime-package': '#FF6B6B',
         'Sublime-AddFolderToProject': '#4ECDC4',
@@ -401,7 +400,6 @@ order: 6
                 data.push(highestValues[name]);
             });
 
-            // Farben für das Pie Chart
             let pieColors = labels.map(name => repositoryColors[name] || '#CCCCCC');
 
             new Chart(GitHubStarsPie, {
