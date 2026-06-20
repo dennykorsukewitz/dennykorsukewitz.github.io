@@ -1,5 +1,5 @@
 <!-- dennykorsukewitz.github.io start -->
-<div id="sitemap-overlay" class="sitemap-overlay d-none" aria-hidden="true">
+<div id="sitemap-overlay" class="sitemap-overlay" aria-hidden="true" hidden>
   <div id="sitemap-modal" class="sitemap-modal" role="dialog" aria-modal="true" aria-labelledby="sitemap-title">
     <header class="sitemap-header">
       <h2 id="sitemap-title">Site map</h2>
@@ -56,20 +56,22 @@
     }
 
     function openSitemap() {
-      overlay.classList.remove('d-none');
+      overlay.hidden = false;
+      overlay.classList.add('is-open');
       overlay.setAttribute('aria-hidden', 'false');
       document.body.classList.add('sitemap-open');
       closeBtn.focus();
     }
 
     function closeSitemap() {
-      overlay.classList.add('d-none');
+      overlay.hidden = true;
+      overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('sitemap-open');
     }
 
     function toggleSitemap() {
-      if (overlay.classList.contains('d-none')) {
+      if (overlay.hidden) {
         openSitemap();
       } else {
         closeSitemap();
@@ -99,7 +101,7 @@
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && !overlay.classList.contains('d-none')) {
+      if (event.key === 'Escape' && !overlay.hidden) {
         closeSitemap();
       }
     });
