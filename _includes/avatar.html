@@ -6,8 +6,8 @@
     document.querySelector('#avatar > img').addEventListener('mouseover', function() {
       hoverTimer = setTimeout(function() {
         this.src = '/assets/img/dk.png';
-        document.querySelector('#sidebar > header > h1 > a').textContent = 'Hey, what are you doing?';
-        document.querySelector('#sidebar > header > p').textContent = 'Go somewhere else with your cursor!';
+        document.querySelector('#sidebar .site-title').textContent = 'Hey, what are you doing?';
+        document.querySelector('#sidebar .site-subtitle').textContent = 'Go somewhere else with your cursor!';
 
       }.bind(this), 2000);
     });
@@ -15,8 +15,8 @@
     document.querySelector('#avatar > img').addEventListener('mouseout', function() {
       clearTimeout(hoverTimer);
       this.src = '/assets/img/avatar.png';
-      document.querySelector('#sidebar > header > h1 > a').textContent = 'Denny Korsukéwitz';
-      document.querySelector('#sidebar > header > p').textContent = 'DK 4 OpenSource';
+      document.querySelector('#sidebar .site-title').textContent = 'Denny Korsukéwitz';
+      document.querySelector('#sidebar .site-subtitle').textContent = 'DK 4 OpenSource';
 
     });
   });

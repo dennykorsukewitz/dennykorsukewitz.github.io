@@ -1,6 +1,6 @@
 # Site Structure
 
-The site is built with [Jekyll](https://jekyllrb.com/) and the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme v6.2.
+The site is built with [Jekyll](https://jekyllrb.com/) and the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme v7.6.
 
 Live: https://dennykorsukewitz.github.io  
 Deploy branch: `dev`
