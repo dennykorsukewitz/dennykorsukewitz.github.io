@@ -51,6 +51,128 @@ img[alt="GitHub Top Languages"],
     border-bottom: 1px solid var(--link-underline-color);
 }
 
+#sidebar .site-subtitle.sitemap-trigger {
+    cursor: pointer;
+}
+
+#sidebar .site-subtitle.sitemap-trigger:hover {
+    color: var(--link-color);
+}
+
+body.sitemap-open {
+    overflow: hidden;
+}
+
+.sitemap-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.sitemap-modal {
+    width: min(720px, 100%);
+    max-height: min(80vh, 900px);
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25);
+}
+
+.sitemap-header {
+    position: relative;
+    padding: 1.25rem 3rem 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sitemap-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.sitemap-subtitle {
+    margin: 0.35rem 0 0;
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+}
+
+.sitemap-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted-color);
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+.sitemap-close:hover {
+    color: var(--text-color);
+}
+
+.sitemap-body {
+    overflow: auto;
+    padding: 0.75rem 1rem;
+}
+
+.sitemap-tree {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sitemap-item {
+    padding: 0.35rem 0 0.35rem calc(var(--depth) * 1.25rem);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sitemap-item:last-child {
+    border-bottom: 0;
+}
+
+.sitemap-item a {
+    display: inline-block;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sitemap-item a:hover {
+    border-bottom: 2px solid #4f81bc;
+}
+
+.sitemap-path {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--text-muted-color);
+    font-size: 0.78rem;
+    font-family: var(--bs-font-monospace, monospace);
+}
+
+.sitemap-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted-color);
+    font-size: 0.82rem;
+}
+
+.sitemap-hint {
+    text-align: right;
+}
+
 @media (min-width: 1650px){
 
     #topbar, #main, footer>.container {

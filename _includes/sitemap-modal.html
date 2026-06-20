@@ -1,0 +1,120 @@
+<!-- dennykorsukewitz.github.io start -->
+<div id="sitemap-overlay" class="sitemap-overlay d-none" aria-hidden="true">
+  <div id="sitemap-modal" class="sitemap-modal" role="dialog" aria-modal="true" aria-labelledby="sitemap-title">
+    <header class="sitemap-header">
+      <h2 id="sitemap-title">Site map</h2>
+      <p class="sitemap-subtitle">All pages, including unlinked ones</p>
+      <button id="sitemap-close" type="button" class="sitemap-close" aria-label="Close site map">
+        <i class="fas fa-times"></i>
+      </button>
+    </header>
+    <div class="sitemap-body">
+      <ul class="sitemap-tree">
+        {%- assign sitemap_pages = site.pages | sort: "url" -%}
+        {%- assign sitemap_count = 0 -%}
+        {%- for p in sitemap_pages -%}
+          {%- if p.url == nil or p.url == "" -%}
+          {%- elsif p.layout == nil or p.layout == "compress" -%}
+          {%- elsif p.sitemap == false -%}
+          {%- elsif p.url contains "404" -%}
+          {%- else -%}
+          {%- assign sitemap_count = sitemap_count | plus: 1 -%}
+          {%- assign path_parts = p.url | split: "/" -%}
+          {%- assign depth = path_parts.size | minus: 2 -%}
+          {%- if depth < 0 -%}
+            {%- assign depth = 0 -%}
+          {%- endif -%}
+          {%- assign label = p.title -%}
+          {%- if label == nil or label == "" -%}
+            {%- assign label = path_parts | last -%}
+            {%- if label == "" or label == nil -%}
+              {%- assign label = path_parts | slice: -2, 1 | first -%}
+            {%- endif -%}
+          {%- endif -%}
+          <li class="sitemap-item" style="--depth: {{ depth }}">
+            <a href="{{ p.url | relative_url }}">{{ label }}</a>
+            <span class="sitemap-path">{{ p.url }}</span>
+          </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+    <footer class="sitemap-footer">
+      <span>{{ sitemap_count }} pages</span>
+      <span class="sitemap-hint">Click tagline to toggle</span>
+    </footer>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var overlay = document.getElementById('sitemap-overlay');
+    var closeBtn = document.getElementById('sitemap-close');
+
+    if (!overlay) {
+      return;
+    }
+
+    function openSitemap() {
+      overlay.classList.remove('d-none');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('sitemap-open');
+      closeBtn.focus();
+    }
+
+    function closeSitemap() {
+      overlay.classList.add('d-none');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('sitemap-open');
+    }
+
+    function toggleSitemap() {
+      if (overlay.classList.contains('d-none')) {
+        openSitemap();
+      } else {
+        closeSitemap();
+      }
+    }
+
+    window.SitemapModal = {
+      open: openSitemap,
+      close: closeSitemap,
+      toggle: toggleSitemap
+    };
+
+    var subtitle = document.querySelector('#sidebar .site-subtitle');
+    if (subtitle) {
+      subtitle.classList.add('sitemap-trigger');
+      subtitle.setAttribute('role', 'button');
+      subtitle.setAttribute('tabindex', '0');
+      subtitle.setAttribute('title', 'Show site map');
+
+      subtitle.addEventListener('click', function (event) {
+        event.preventDefault();
+        toggleSitemap();
+      });
+
+      subtitle.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleSitemap();
+        }
+      });
+    }
+
+    closeBtn.addEventListener('click', closeSitemap);
+
+    overlay.addEventListener('click', function (event) {
+      if (event.target === overlay) {
+        closeSitemap();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !overlay.classList.contains('d-none')) {
+        closeSitemap();
+      }
+    });
+  });
+</script>
+<!-- dennykorsukewitz.github.io end -->
