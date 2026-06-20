@@ -41,7 +41,7 @@
     </div>
     <footer class="sitemap-footer">
       <span>{{ sitemap_count }} pages</span>
-      <span class="sitemap-hint">Click tagline to toggle</span>
+      <span class="sitemap-hint">Sidebar icon to toggle</span>
     </footer>
   </div>
 </div>
@@ -82,23 +82,11 @@
       toggle: toggleSitemap
     };
 
-    var subtitle = document.querySelector('#sidebar .site-subtitle');
-    if (subtitle) {
-      subtitle.classList.add('sitemap-trigger');
-      subtitle.setAttribute('role', 'button');
-      subtitle.setAttribute('tabindex', '0');
-      subtitle.setAttribute('title', 'Show site map');
-
-      subtitle.addEventListener('click', function (event) {
+    var trigger = document.getElementById('sitemap-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', function (event) {
         event.preventDefault();
         toggleSitemap();
-      });
-
-      subtitle.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggleSitemap();
-        }
       });
     }
 

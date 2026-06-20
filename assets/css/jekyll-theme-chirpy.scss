@@ -51,14 +51,6 @@ img[alt="GitHub Top Languages"],
     border-bottom: 1px solid var(--link-underline-color);
 }
 
-#sidebar .site-subtitle.sitemap-trigger {
-    cursor: pointer;
-}
-
-#sidebar .site-subtitle.sitemap-trigger:hover {
-    color: var(--link-color);
-}
-
 body.sitemap-open {
     overflow: hidden;
 }
