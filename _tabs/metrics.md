@@ -109,9 +109,6 @@ order: 6
                         }
                     },
                     plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
                         title: {
                             display: true,
                             text: 'Daily - Installs'
@@ -150,7 +147,7 @@ order: 6
                     tension: 0.1,
                     spanGaps: true,
                     borderColor: repositoryColors[name] || '#CCCCCC',
-                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
+                    backgroundColor: (repositoryColors[name] || '#CCCCCC') + '20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -178,9 +175,6 @@ order: 6
                     },
 
                     plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
                         title: {
                             display: true,
                             text: 'VSCode - Installs'
@@ -215,7 +209,7 @@ order: 6
                     tension: 0.1,
                     spanGaps: true,
                     borderColor: repositoryColors[name] || '#CCCCCC',
-                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
+                    backgroundColor: (repositoryColors[name] || '#CCCCCC') + '20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -243,9 +237,6 @@ order: 6
                     },
 
                     plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
                         title: {
                             display: true,
                             text: 'Sublime - Installs'
@@ -277,7 +268,7 @@ order: 6
                     tension: 0.1,
                     spanGaps: true,
                     borderColor: repositoryColors[name] || '#CCCCCC',
-                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
+                    backgroundColor: (repositoryColors[name] || '#CCCCCC') + '20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -303,9 +294,6 @@ order: 6
                         }
                     },
                     plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
                         title: {
                             display: true,
                             text: 'NPM - Installs'
@@ -343,7 +331,7 @@ order: 6
                     tension: 0.1,
                     spanGaps: true,
                     borderColor: repositoryColors[name] || '#CCCCCC',
-                    backgroundColor: repositoryColors[name] + '20' || '#CCCCCC20',
+                    backgroundColor: (repositoryColors[name] || '#CCCCCC') + '20',
                     parsing: {
                         xAxisKey: 'date',
                         yAxisKey: name,
@@ -369,9 +357,6 @@ order: 6
                         }
                     },
                     plugins: {
-                        colors: {
-                            forceOverride: true,
-                        },
                         title: {
                             display: true,
                             text: 'GitHub Stars'
