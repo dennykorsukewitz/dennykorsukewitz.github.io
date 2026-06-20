@@ -1,0 +1,16 @@
+services:
+  site:
+    build: .
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    volumes:
+      - .:/srv/jekyll
+      - jekyll-cache:/srv/jekyll/.jekyll-cache
+      - jekyll-site:/srv/jekyll/_site
+    environment:
+      JEKYLL_ENV: development
+
+volumes:
+  jekyll-cache:
+  jekyll-site:
