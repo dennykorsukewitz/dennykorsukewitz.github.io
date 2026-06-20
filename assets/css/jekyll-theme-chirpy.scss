@@ -169,6 +169,10 @@ body.sitemap-open {
     text-align: right;
 }
 
+#sidebar .sidebar-bottom .dropdown-menu {
+    z-index: 1060;
+}
+
 @media (min-width: 1650px){
 
     #topbar, #main, footer>.container {

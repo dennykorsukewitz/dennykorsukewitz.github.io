@@ -12,6 +12,7 @@ git clone "https://github.com/$OWNER/$REPOSITORY" $REPOSITORY
 
 TEMPLATE="---
 layout: page
+title: Home
 # Index page
 category: $REPOSITORY
 toc: true

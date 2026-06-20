@@ -145,10 +145,6 @@ collections:
 
 defaults:
   - scope:
-      path: ""
-    values:
-      layout: page
-  - scope:
       path: "" # An empty string here means all files in the project
       type: posts
     values:
@@ -169,13 +165,16 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
+      path: assets
+    values:
+      layout: null
+  - scope:
       path: assets/img/favicons
     values:
       swcache: true
   - scope:
       path: assets/js/dist
     values:
-      layout: null
       swcache: true
 
 sass:
