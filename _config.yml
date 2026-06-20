@@ -198,6 +198,7 @@ include:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - doc
   - docs
   - tools
   - README.md
