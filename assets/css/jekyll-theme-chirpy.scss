@@ -1,7 +1,11 @@
 ---
 ---
 
-@import 'main';
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+@use 'main.bundle';
 
 /* append your custom style below */
 
@@ -167,10 +171,6 @@ body.sitemap-open {
 
 .sitemap-hint {
     text-align: right;
-}
-
-#sidebar .sidebar-bottom .dropdown-menu {
-    z-index: 1060;
 }
 
 @media (min-width: 1650px){

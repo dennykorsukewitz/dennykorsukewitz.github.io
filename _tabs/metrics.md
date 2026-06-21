@@ -1,6 +1,6 @@
 ---
 layout: page
-icon: fas fa-solid fa-chart-pie"
+icon: fas fa-chart-pie
 order: 6
 ---
 
