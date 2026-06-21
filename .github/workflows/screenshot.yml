@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout dennykorsukewitz.github.io
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         env:
           fetch-depth: "1"
         with:
