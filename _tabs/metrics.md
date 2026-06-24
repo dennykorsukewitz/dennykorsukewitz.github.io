@@ -33,9 +33,9 @@ order: 6
 <script>
 
     const repositoryColors = {
-        'generator-sublime-package':   '#ED4848', // soft red
-        'VSCode-AddFolderToWorkspace': '#ED7448', // coral
-        'Sublime-AddFolderToProject':  '#E6A048', // amber
+        'generator-sublime-package':     '#ED4848', // soft red
+        'VSCode-AddFolderToWorkspace':   '#ED7448', // coral
+        'Sublime-AddFolderToProject':    '#E6A048', // amber
         'Znuny-QuickDelete':             '#CDB848', // gold-green
         'VSCode-GitHubFileFetcher':      '#A0C848', // sage
         'Sublime-GitHubFileFetcher':     '#48C878', // emerald
@@ -115,9 +115,8 @@ order: 6
                         },
                     }
                 }
-            }
-        )
-    });
+            });
+        });
 
     const VSCodeInstalls = document.getElementById('VSCodeInstalls');
     let url_vscode = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/vscode-total.json';
@@ -181,9 +180,8 @@ order: 6
                         },
                     }
                 }
-            }
-        )
-    });
+            });
+        });
 
     const SublimeInstalls = document.getElementById('SublimeInstalls');
     let url_sublime = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/sublime-total.json';
@@ -243,9 +241,8 @@ order: 6
                         }
                     }
                 }
-            }
-        )
-    });
+            });
+        });
 
     const NPMInstalls = document.getElementById('NPMInstalls');
     let url_npm = 'https://raw.githubusercontent.com/dennykorsukewitz/dennykorsukewitz/dev/.github/metrics/data/npm-total.json';
@@ -300,9 +297,8 @@ order: 6
                         },
                     }
                 }
-            }
-        )
-    });
+            });
+        });
 
     const GitHubStars = document.getElementById('GitHubStars');
     const GitHubStarsPie = document.getElementById('GitHubStarsPie');
@@ -401,9 +397,8 @@ order: 6
                         }
                     ]
                 },
-            }
-        )
-    });
+            });
+        });
 
 </script>
 
