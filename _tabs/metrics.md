@@ -33,20 +33,20 @@ order: 6
 <script>
 
     const repositoryColors = {
-        'generator-sublime-package':     '#ED4848', // soft red
-        'VSCode-AddFolderToWorkspace':   '#ED7448', // coral
-        'Sublime-AddFolderToProject':    '#E6A048', // amber
-        'Znuny-QuickDelete':             '#CDB848', // gold-green
-        'VSCode-GitHubFileFetcher':      '#A0C848', // sage
-        'Sublime-GitHubFileFetcher':     '#48C878', // emerald
-        'Znuny-UBInventory':             '#48C8A0', // teal
-        'VSCode-MyExtensionPack':        '#48B8D0', // cyan
-        'MRBS-OTRS':                     '#4894E0', // steel blue
-        'Sublime-QuoteWithMarker':       '#486CE8', // periwinkle
-        'VSCode-QuoteWithMarker':        '#6C4CE8', // indigo
-        'dennykorsukewitz':              '#9C4CE8', // violet
-        'VSCode-RainbowColors':          '#E04CB8', // orchid
-        'VSCode-Znuny':                  '#E04C80', // rose
+        'generator-sublime-package':     '#ED4848',
+        'VSCode-AddFolderToWorkspace':   '#ED7448',
+        'Sublime-AddFolderToProject':    '#E6A048',
+        'Znuny-QuickDelete':             '#CDB848',
+        'VSCode-GitHubFileFetcher':      '#A0C848',
+        'Sublime-GitHubFileFetcher':     '#48C878',
+        'Znuny-UBInventory':             '#48C8A0',
+        'VSCode-MyExtensionPack':        '#48B8D0',
+        'MRBS-OTRS':                     '#4894E0',
+        'Sublime-QuoteWithMarker':       '#486CE8',
+        'VSCode-QuoteWithMarker':        '#6C4CE8',
+        'dennykorsukewitz':              '#9C4CE8',
+        'VSCode-RainbowColors':          '#E04CB8',
+        'VSCode-Znuny':                  '#E04C80',
     };
 
     const Daily = document.getElementById('Daily');
