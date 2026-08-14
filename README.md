@@ -45,6 +45,11 @@
 ![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny.png)
 ![VSCode-Znuny](assets/img/screenshots/Screenshot-VSCode-Znuny-Dark.png)
 
+## Znuny-Dev
+
+![Znuny-Dev](assets/img/screenshots/Screenshot-Znuny-Dev.png)
+![Znuny-Dev](assets/img/screenshots/Screenshot-Znuny-Dev-Dark.png)
+
 ## Znuny-QuickDelete
 
 ![Znuny-QuickDelete](assets/img/screenshots/Screenshot-Znuny-QuickDelete.png)
