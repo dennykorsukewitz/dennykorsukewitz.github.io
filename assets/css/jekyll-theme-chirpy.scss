@@ -173,7 +173,8 @@ body.sitemap-open {
     text-align: right;
 }
 
-html.color-mode-on {
+:root.color-mode-on[data-bs-theme='light'],
+:root.color-mode-on[data-bs-theme='dark'] {
   --color-mode: rgb(var(--color-mode-r, 120), var(--color-mode-g, 80), var(--color-mode-b, 200));
   --text-color: var(--color-mode);
   --heading-color: var(--color-mode);
@@ -197,10 +198,19 @@ html.color-mode-on {
   --toc-highlight: var(--color-mode);
 }
 
-html.color-mode-on input,
-html.color-mode-on textarea {
+:root.color-mode-on[data-bs-theme] input,
+:root.color-mode-on[data-bs-theme] textarea {
   color: var(--color-mode);
   border-color: var(--color-mode);
+}
+
+#mode-toggle + .dropdown-menu .color-mode-separator {
+  height: 1px;
+  margin: 0 0.35rem;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  background-color: var(--menu-border-color);
 }
 
 #mode-toggle + .dropdown-menu .dropdown-item.color-mode-on {
