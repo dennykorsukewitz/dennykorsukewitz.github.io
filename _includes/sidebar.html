@@ -54,6 +54,10 @@
         <i class="fa-regular fa-moon" data-theme-mode="dark"></i>
       {%- endcapture -%}
 
+      {%- capture icon_color -%}
+        <i class="fa-solid fa-palette"></i>
+      {%- endcapture -%}
+
       <div class="btn-group dropup">
         <button
           type="button"
@@ -83,6 +87,18 @@
             <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system">
               {{- icon_system -}}
               {{- site.data.locales[include.lang].theme.system -}}
+            </button>
+          </li>
+          <li><hr class="dropdown-divider my-1"></li>
+          <li>
+            <button
+              class="dropdown-item d-flex align-items-center"
+              type="button"
+              data-color-mode="toggle"
+              aria-pressed="false"
+            >
+              {{- icon_color -}}
+              Color
             </button>
           </li>
         </ul>

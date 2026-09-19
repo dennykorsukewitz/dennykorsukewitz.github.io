@@ -1,0 +1,115 @@
+<!-- dennykorsukewitz.github.io start -->
+<script>
+  (function () {
+    var STORAGE_KEY = 'color-mode';
+    var root = document.documentElement;
+    var enabled = false;
+    var modus = 1;
+    var randomChannel = 40;
+    var rafId = 0;
+    var lastEvent = null;
+
+    function clampChannel(value) {
+      if (value < 0) {
+        return 0;
+      }
+      if (value > 255) {
+        return 255;
+      }
+      return value;
+    }
+
+    function rollPalette() {
+      modus = Math.floor(Math.random() * 3) + 1;
+      randomChannel = Math.floor(Math.random() * 230) + 40;
+    }
+
+    function colorIt(c1, c2, c3) {
+      root.style.setProperty('--color-mode-r', clampChannel(c1));
+      root.style.setProperty('--color-mode-g', clampChannel(c2));
+      root.style.setProperty('--color-mode-b', clampChannel(c3));
+    }
+
+    function applyFromEvent(event) {
+      var width = document.documentElement.scrollWidth / 255;
+      var height = document.documentElement.scrollHeight / 255;
+      if (width === 0 || height === 0) {
+        return;
+      }
+
+      var pageX = parseInt(event.pageX / width, 10);
+      var pageY = parseInt(event.pageY / height, 10);
+
+      if (modus === 1) {
+        colorIt(randomChannel, pageY, pageX);
+      } else if (modus === 2) {
+        colorIt(pageY, randomChannel, pageX);
+      } else {
+        colorIt(pageX, pageY, randomChannel);
+      }
+    }
+
+    function onMouseMove(event) {
+      lastEvent = event;
+      if (rafId) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(function () {
+        rafId = 0;
+        if (lastEvent) {
+          applyFromEvent(lastEvent);
+        }
+      });
+    }
+
+    function syncButton() {
+      var option = document.querySelector('[data-color-mode]');
+      if (!option) {
+        return;
+      }
+      option.classList.toggle('color-mode-on', enabled);
+      option.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+    }
+
+    function setEnabled(on) {
+      enabled = on;
+      root.classList.toggle('color-mode-on', on);
+      syncButton();
+
+      if (on) {
+        rollPalette();
+        applyFromEvent({
+          pageX: window.scrollX + window.innerWidth / 2,
+          pageY: window.scrollY + window.innerHeight / 2
+        });
+        document.addEventListener('mousemove', onMouseMove);
+        localStorage.setItem(STORAGE_KEY, 'on');
+        return;
+      }
+
+      document.removeEventListener('mousemove', onMouseMove);
+      localStorage.removeItem(STORAGE_KEY);
+      root.style.removeProperty('--color-mode-r');
+      root.style.removeProperty('--color-mode-g');
+      root.style.removeProperty('--color-mode-b');
+    }
+
+    document.addEventListener('click', function (event) {
+      var option = event.target.closest('[data-color-mode]');
+      if (!option) {
+        return;
+      }
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      setEnabled(!enabled);
+    }, true);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (localStorage.getItem(STORAGE_KEY) === 'on') {
+        setEnabled(true);
+      }
+    });
+  })();
+</script>
+<!-- dennykorsukewitz.github.io end -->

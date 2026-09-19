@@ -173,6 +173,51 @@ body.sitemap-open {
     text-align: right;
 }
 
+html.color-mode-on {
+  --color-mode: rgb(var(--color-mode-r, 120), var(--color-mode-g, 80), var(--color-mode-b, 200));
+  --text-color: var(--color-mode);
+  --heading-color: var(--color-mode);
+  --link-color: var(--color-mode);
+  --link-underline-color: var(--color-mode);
+  --text-muted-color: var(--color-mode);
+  --text-muted-highlight-color: var(--color-mode);
+  --label-color: var(--color-mode);
+  --blockquote-text-color: var(--color-mode);
+  --site-title-color: var(--color-mode);
+  --site-subtitle-color: var(--color-mode);
+  --sidebar-active-color: var(--color-mode);
+  --sidebar-muted-color: var(--color-mode);
+  --sidebar-btn-color: var(--color-mode);
+  --topbar-text-color: var(--color-mode);
+  --search-icon-color: var(--color-mode);
+  --post-list-text-color: var(--color-mode);
+  --btn-backtotop-color: var(--color-mode);
+  --btn-backtotop-border-color: var(--color-mode);
+  --menu-active-color: var(--color-mode);
+  --toc-highlight: var(--color-mode);
+}
+
+html.color-mode-on input,
+html.color-mode-on textarea {
+  color: var(--color-mode);
+  border-color: var(--color-mode);
+}
+
+#mode-toggle + .dropdown-menu .dropdown-item.color-mode-on {
+  font-weight: 600;
+  color: var(--menu-active-color);
+  background-color: var(--menu-highlight-bg);
+}
+
+#mode-toggle + .dropdown-menu .dropdown-item.color-mode-on::after {
+  content: '\f00c';
+  font: var(--fa-font-solid);
+  font-size: 0.75rem;
+  color: var(--sidebar-btn-color);
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
 @media (min-width: 1650px){
 
     #topbar, #main, footer>.container {
