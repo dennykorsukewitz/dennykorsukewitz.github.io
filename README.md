@@ -30,6 +30,11 @@
 ![VSCode-GitHubFileFetcher](assets/img/screenshots/Screenshot-VSCode-GitHubFileFetcher.png)
 ![VSCode-GitHubFileFetcher](assets/img/screenshots/Screenshot-VSCode-GitHubFileFetcher-Dark.png)
 
+## VSCode-MyPlayground
+
+![VSCode-MyPlayground](assets/img/screenshots/Screenshot-VSCode-MyPlayground.png)
+![VSCode-MyPlayground](assets/img/screenshots/Screenshot-VSCode-MyPlayground-Dark.png)
+
 ## VSCode-QuoteWithMarker
 
 ![VSCode-QuoteWithMarker](assets/img/screenshots/Screenshot-VSCode-QuoteWithMarker.png)
